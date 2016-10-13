@@ -1,3 +1,7 @@
 import template from './template.html';
+import controller from './controller';
 
-export default { template };
+export default {
+  controller,
+  template
+};
