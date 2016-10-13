@@ -1,0 +1,23 @@
+<bm.header></bm.header>
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-md-3">
+      <div class="nav nav-sidebar">
+        <bm.categories></bm.categories>
+      </div>
+    </div>
+
+    <div class="col-md-9">
+      <bm.bookmarks></bm.bookmarks>
+    </div>
+
+  </div>
+
+  <div ng-click="$ctrl.toggleGreeting()">{{$ctrl.greeting}}</div>
+
+</div>
+
+<bm.footer></bm.footer>
