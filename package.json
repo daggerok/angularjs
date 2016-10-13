@@ -1,5 +1,5 @@
 {
-  "name": "angularjs-bookmarks",
+  "name": "angularjs",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -67,6 +67,14 @@
   ],
   "main": "index.js",
   "author": "daggerok",
-  "description": "angularjs-bookmarks",
-  "license": "ISC"
+  "description": "angularjs",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daggerok/angularjs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daggerok/angularjs/issues"
+  },
+  "homepage": "https://github.com/daggerok/angularjs#readme"
 }

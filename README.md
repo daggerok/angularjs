@@ -1,4 +1,4 @@
-# angularjs-bookmarks [![build](https://travis-ci.org/daggerok/angularjs-bookmarks.svg?branch=master)](https://travis-ci.org/daggerok/angularjs-bookmarks)
+# angularjs [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=master)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i
