@@ -14,6 +14,6 @@ export default class BookmarkModel {
   }
 
   static uri() {
-    return '/api/bookmarks';
+    return './api/bookmarks';
   }
 }

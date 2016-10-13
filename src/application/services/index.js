@@ -3,4 +3,4 @@ import HateoasService from './hateoas';
 
 export default angular
   .module('bm.services', [])
-  .service(HateoasService.name, HateoasService);
+  .service('HateoasService', HateoasService);

@@ -1,0 +1,67 @@
+{
+  "_embedded": {
+    "categories": [
+      {
+        "id": 0,
+        "name": "Regional Markets Engineer"
+      },
+      {
+        "id": 1,
+        "name": "Chief Brand Technician"
+      },
+      {
+        "id": 2,
+        "name": "Direct Assurance Agent"
+      },
+      {
+        "id": 3,
+        "name": "Internal Integration Technician"
+      },
+      {
+        "id": 4,
+        "name": "Dynamic Solutions Analyst"
+      },
+      {
+        "id": 5,
+        "name": "Dynamic Interactions Representative"
+      },
+      {
+        "id": 6,
+        "name": "Legacy Data Strategist"
+      },
+      {
+        "id": 7,
+        "name": "Dynamic Markets Analyst"
+      },
+      {
+        "id": 8,
+        "name": "Forward Directives Specialist"
+      },
+      {
+        "id": 9,
+        "name": "Product Interactions Director"
+      },
+      {
+        "id": 10,
+        "name": "Investor Communications Consultant"
+      },
+      {
+        "id": 11,
+        "name": "Legacy Configuration Representative"
+      },
+      {
+        "id": 12,
+        "name": "Lead Program Associate"
+      },
+      {
+        "id": 13,
+        "name": "Human Factors Associate"
+      },
+      {
+        "id": 14,
+        "name": "Corporate Branding Representative"
+      }
+    ],
+    "_links": []
+  }
+}

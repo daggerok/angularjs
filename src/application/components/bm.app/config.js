@@ -1,7 +1,6 @@
 export default ($urlRouterProvider, $locationProvider, $stateProvider) => {
 
   $urlRouterProvider.otherwise('/');
-
   $locationProvider.hashPrefix('!');
 
   [

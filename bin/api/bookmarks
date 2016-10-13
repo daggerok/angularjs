@@ -1,0 +1,97 @@
+{
+  "_embedded": {
+    "bookmarks": [
+      {
+        "id": 0,
+        "title": "Ms. Uriah Rogahn",
+        "url": "http://modesta.com",
+        "category": "Regional Markets Engineer"
+      },
+      {
+        "id": 1,
+        "title": "Aliya Beer",
+        "url": "https://reina.name",
+        "category": "Chief Brand Technician"
+      },
+      {
+        "id": 2,
+        "title": "Miss Piper Streich",
+        "url": "https://jay.name",
+        "category": "Direct Assurance Agent"
+      },
+      {
+        "id": 3,
+        "title": "Janessa Hilpert",
+        "url": "https://luna.org",
+        "category": "Internal Integration Technician"
+      },
+      {
+        "id": 4,
+        "title": "Marjory West I",
+        "url": "https://madelyn.com",
+        "category": "Dynamic Solutions Analyst"
+      },
+      {
+        "id": 5,
+        "title": "Quentin Gusikowski",
+        "url": "http://krystel.org",
+        "category": "Dynamic Interactions Representative"
+      },
+      {
+        "id": 6,
+        "title": "Camille Schoen",
+        "url": "http://solon.name",
+        "category": "Legacy Data Strategist"
+      },
+      {
+        "id": 7,
+        "title": "Sidney Berge",
+        "url": "http://brenden.name",
+        "category": "Dynamic Markets Analyst"
+      },
+      {
+        "id": 8,
+        "title": "Gloria Koss",
+        "url": "http://lindsay.name",
+        "category": "Forward Directives Specialist"
+      },
+      {
+        "id": 9,
+        "title": "Abe Pfeffer",
+        "url": "https://eden.com",
+        "category": "Product Interactions Director"
+      },
+      {
+        "id": 10,
+        "title": "Antwon Williamson",
+        "url": "http://kristoffer.net",
+        "category": "Investor Communications Consultant"
+      },
+      {
+        "id": 11,
+        "title": "Corene Dicki",
+        "url": "http://baylee.info",
+        "category": "Legacy Configuration Representative"
+      },
+      {
+        "id": 12,
+        "title": "Libby Daugherty",
+        "url": "http://delia.net",
+        "category": "Lead Program Associate"
+      },
+      {
+        "id": 13,
+        "title": "Cassandre Aufderhar",
+        "url": "https://hyman.org",
+        "category": "Human Factors Associate"
+      },
+      {
+        "id": 14,
+        "title": "Maeve Collier",
+        "url": "http://sheridan.com",
+        "category": "Corporate Branding Representative"
+      }
+    ],
+    "_links": []
+  }
+}

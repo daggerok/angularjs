@@ -32,7 +32,7 @@ export default {
       {
         exclude,
         include: src,
-        test: /\.js$/,
+        test: /src.*\.js$/,
         loader: 'ng-annotate!babel',
       },
       {
