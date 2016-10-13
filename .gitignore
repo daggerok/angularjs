@@ -1,5 +1,9 @@
+.DS_Store
 npm-debug.log*
 node_modules/
-.DS_Store
+app/vendors/
+app/dist/
 .idea/
 dist/
+!app/src/assets/.gitkeep
+!app/dist/.gitkeep
