@@ -1,14 +1,20 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import BmAppModule from './bm.app';
-import BmHeaderModule from './bm.header';
-import BmFooterModule from './bm.footer';
-import BmHomeModule from './bm.home';
+import AppModule from './app';
+import AppContactUsModules from './app-contact-us';
+import AppHomeModule from './app-home';
+import AppLoginModules from './app-login';
+import AppSignupModules from './app-signup';
+import AppSiteMapModules from './app-site-map';
+import CommonModule from './common';
 
-export default angular.module('bm.components', [
+export default angular.module('app.components', [
   uiRouter,
-  BmAppModule.name,
-  BmHeaderModule.name,
-  BmFooterModule.name,
-  BmHomeModule.name,
+  AppModule.name,
+  AppContactUsModules.name,
+  AppHomeModule.name,
+  AppLoginModules.name,
+  AppSignupModules.name,
+  AppSiteMapModules.name,
+  CommonModule.name,
 ]);

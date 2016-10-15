@@ -5,11 +5,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
+const assets = /\.(raw|gif|png|jpg|jpeg|otf|eot|woff|woff2|ttf|svg)$/;
 const resolve = (rel) => path.resolve(process.cwd(), rel);
-const include = resolve('./node_modules/bootstrap/dist');
-const src = resolve('./src');
-const exclude = /(node_modules|bower_components)/;
-const urlLimit = 'url?limit=1024';
+const include = resolve('./src');
 export default {
   entry: {
     bookmarks: './src/main.js'
@@ -22,22 +20,19 @@ export default {
 
   module: {
     preLoaders: [{
-      exclude,
-      include: src,
+      include,
       test: /\.js$/,
       loader: 'source-map',
     }],
 
     loaders: [
       {
-        exclude,
-        include: src,
+        include,
         test: /src.*\.js$/,
         loader: 'ng-annotate!babel',
       },
       {
-        exclude,
-        include: src,
+        include,
         test: /\.js$/,
         loader: 'babel',
         query: {
@@ -52,46 +47,38 @@ export default {
         }
       },
       {
+        include,
         test: /template.html$/,
         loader: 'ng-cache?prefix=[dir]/[dir]',
       },
       {
         test: /\.css$/,
-        include: [resolve('./node_modules/angular'), include, src],
+        include: [
+          resolve('./node_modules/angular'),
+          resolve('./node_modules/semantic-ui/dist'),
+          include,
+        ],
         loader: ExtractPlugin.extract('style', 'css?importloader=1', 'postcss'),
       },
       {
-        include: src,
+        include,
         test: /\.styl$/,
         loader: ExtractPlugin.extract('style', 'css!postcss!stylus?sourceMap'),
       },
-      /*
       {
-        include,
-        loader: 'url',
-        // loader: urlLimit,
-        test: /\.(eot|otf|woff(2)?|ttf|svg)?$/,
-      },
-      */
-      {
-        include,
-        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file'
+        include: /\/node_modules\//,
+        loader: 'file?name=vendor/[1]&regExp=node_modules/(.*)',
+        test: assets,
       },
       {
         include,
-        test: /\.(woff|woff2)$/,
-        loader:`${urlLimit}&prefix=font/`,
+        loader: 'file?name=[1]&regExp=src/(.*)',
+        test: assets,
       },
       {
-        include,
-        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: `${urlLimit}&mimetype=app/octet-stream`,
-      },
-      {
-        include,
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: `${urlLimit}&mimetype=image/svg+xml`,
+        include: resolve('./storage'),
+        loader: 'file?name=[path]/[name].[ext]',
+        test: assets,
       },
     ]
   },
@@ -105,7 +92,10 @@ export default {
     new ExtractPlugin('[name].css', { allChunks: true }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      favicon: './src/favicon.ico'
+      favicon: './src/favicon.ico',
+      minify: {
+        collapseWhitespace: true
+      }
     }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',
@@ -123,6 +113,6 @@ export default {
     console: true,
     fs: 'empty',
     net: 'empty',
-    tls: 'empty'
+    tls: 'empty',
   }
 };
