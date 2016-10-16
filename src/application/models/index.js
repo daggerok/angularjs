@@ -3,6 +3,6 @@ import BookmarkModel from './bookmarks';
 import CategoryModel from './categories';
 
 export default angular
-  .module('bm.models', [])
+  .module('app.models', [])
   .service('BookmarkModel', BookmarkModel)
   .service('CategoryModel', CategoryModel);
