@@ -9,21 +9,35 @@
 </head>
 <body class="pushable">
 
-<app-following-menu></app-following-menu>
+<!-- Following Menu -->
+<div class="ui large top fixed hidden menu">
+  <div class="ui container">
+
+    <app-links></app-links>
+
+    <div class="right menu">
+      <div class="item">
+        <a ng-href="#/login" class="ui button">Login</a>
+      </div>
+      <div class="item">
+        <a ng-href="#/signup" class="ui primary button">Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!--sync it with app-following-menu and app-header components-->
 <!-- Sidebar Menu -->
 <div class="ui vertical inverted sidebar menu">
   <app-links></app-links>
-  <a class="item" ui-sref="app.login" ui-sref-active="active">Login</a>
-  <a class="item" ui-sref="app.signup" ui-sref-active="active">Signup</a>
+  <a ng-href="#/login" class="item">Login</a>
+  <a ng-href="#/signup" class="item">Sign Up</a>
 </div>
 
 <!-- Page Contents -->
 <div class="pusher">
-  <app-header></app-header>
-  <app>loading...</app>
-  <app-footer></app-footer>
+  <app></app>
 </div>
+
 </body>
 </html>

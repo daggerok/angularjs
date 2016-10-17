@@ -27,7 +27,8 @@ config.entry[vendor] = [
   'semantic-ui/dist/components/transition.css',
   'angular/angular-csp.css',
   'angular',
-  'angular-ui-router',
+  // 'angular-ui-router',
+  '@angular/router/angular1/angular_1_router.js',
 ];
 
 config.devtool = '#source-map';

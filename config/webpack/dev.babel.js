@@ -5,7 +5,7 @@ config.output.sourceMapFilename = 'maps/[file].map';
 export default {
   ...config,
 
-  devtool: '#cheap-module-inline-source-map',
+  devtool: '#source-map',
 
   devServer: {
     port: 8000,

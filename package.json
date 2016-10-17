@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "angular": "^1.5.8",
-    "angular-ui-router": "^0.3.1",
+    "@angular/router": "^0.2.0",
     "jquery": "^3.1.1",
     "semantic-ui": "^2.2.4"
   },

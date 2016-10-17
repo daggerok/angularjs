@@ -1,18 +1,13 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
+import '@angular/router/angular1/angular_1_router.js';
 
-import Config from './config';
 import ComponentsModule from './components';
 import ModelsModule from './models';
 import ServicesModule from './services';
 
-const Application = angular.module('app', [
-  uiRouter,
+export default angular.module('app', [
+  'ngComponentRouter',
   ComponentsModule.name,
   ModelsModule.name,
   ServicesModule.name,
 ]);
-
-Application.config(['$locationProvider', '$urlRouterProvider', Config]);
-
-export default Application;
