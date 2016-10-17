@@ -1,0 +1,59 @@
+{
+  "_embedded": {
+    "categories": [
+      {
+        "id": 0,
+        "name": "International Factors Producer"
+      },
+      {
+        "id": 1,
+        "name": "Senior Communications Supervisor"
+      },
+      {
+        "id": 2,
+        "name": "International Configuration Liason"
+      },
+      {
+        "id": 3,
+        "name": "Customer Marketing Planner"
+      },
+      {
+        "id": 4,
+        "name": "Human Identity Representative"
+      },
+      {
+        "id": 5,
+        "name": "National Integration Assistant"
+      },
+      {
+        "id": 6,
+        "name": "Internal Division Liason"
+      },
+      {
+        "id": 7,
+        "name": "Chief Usability Technician"
+      },
+      {
+        "id": 8,
+        "name": "Human Optimization Supervisor"
+      },
+      {
+        "id": 9,
+        "name": "Product Integration Executive"
+      },
+      {
+        "id": 10,
+        "name": "Dynamic Accountability Director"
+      },
+      {
+        "id": 11,
+        "name": "Principal Quality Producer"
+      }
+    ],
+    "_links": [
+      {
+        "self": "http://localhost:8080/api"
+      }
+    ]
+  }
+}

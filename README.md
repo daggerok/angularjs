@@ -1,4 +1,4 @@
-# angularjs-bookmarks [![build](https://travis-ci.org/daggerok/angularjs-bookmarks.svg?branch=master)](https://travis-ci.org/daggerok/angularjs-bookmarks)
+# angularjs-bookmarks [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=angularjs-bookmarks)](https://travis-ci.org/daggerok/angularjs)
 
 using:
 - Wepack
