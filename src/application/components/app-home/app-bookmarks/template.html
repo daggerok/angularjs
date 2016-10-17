@@ -1,0 +1,24 @@
+<div class="ui two column grid margin-2em">
+  <div class="seven wide column">
+    <div ng-repeat="category in $ctrl.categories">
+      <app-category selected="$ctrl.filterBookmarksBy(category)"
+                    category="category"
+                    class="item"></app-category>
+    </div>
+  </div>
+  <div class="nine wide column">
+    <div ng-repeat="bookmark in $ctrl.bookmarks">
+      <div class="row">
+        <app-bookmark ng-hide="$ctrl.isEditingBookmark(bookmark)"
+                      selected="$ctrl.setEditingBookmark(bookmark)"
+                      bookmark="bookmark"
+                      class="item"></app-bookmark>
+        <app-edit-bookmark ng-show="$ctrl.isEditingBookmark(bookmark)"
+                           on-update="$ctrl.onUpdate($event)"
+                           on-cancel="$ctrl.onCancel($event)"
+                           bookmark="bookmark"
+                           class="item"></app-edit-bookmark>
+      </div>
+    </div>
+  </div>
+</div>

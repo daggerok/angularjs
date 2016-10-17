@@ -1,0 +1,47 @@
+{
+  "_embedded": {
+    "categories": [
+      {
+        "id": 0,
+        "name": "Investor Usability Associate"
+      },
+      {
+        "id": 1,
+        "name": "Chief Directives Planner"
+      },
+      {
+        "id": 2,
+        "name": "International Operations Assistant"
+      },
+      {
+        "id": 3,
+        "name": "Global Security Liason"
+      },
+      {
+        "id": 4,
+        "name": "Regional Brand Administrator"
+      },
+      {
+        "id": 5,
+        "name": "Legacy Infrastructure Manager"
+      },
+      {
+        "id": 6,
+        "name": "Central Markets Consultant"
+      },
+      {
+        "id": 7,
+        "name": "Direct Functionality Agent"
+      },
+      {
+        "id": 8,
+        "name": "Central Integration Assistant"
+      }
+    ],
+    "_links": [
+      {
+        "self": "http://localhost:8080/api"
+      }
+    ]
+  }
+}

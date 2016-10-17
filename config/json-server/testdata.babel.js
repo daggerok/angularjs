@@ -35,19 +35,19 @@ bookmarksWithCategories.forEach(c => {
 });
 
 export default () => { return {
-  "api/categories": {
+  "categories": {
     _embedded: {
       categories,
       _links
     }
   },
-  "api/all": {
+  "all": {
     _embedded: {
       all: bookmarksWithCategories,
       _links
     }
   },
-  "api/bookmarks": {
+  "bookmarks": {
     _embedded: {
       bookmarks,
       _links

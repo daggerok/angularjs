@@ -5,8 +5,10 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 
-const assets = /\.(raw|gif|png|jpg|jpeg|otf|eot|woff|woff2|ttf|svg)$/;
+const exclude = /\/node_modules\//;
+const assets = /\.(raw|gif|png|jpg|jpeg|otf|eot|woff|woff2|ttf|svg|ico)$/;
 const resolve = (rel) => path.resolve(process.cwd(), rel);
+const appStaticFiles = resolve('./src/assets');
 const include = resolve('./src');
 export default {
   entry: {
@@ -66,17 +68,17 @@ export default {
         loader: ExtractPlugin.extract('style', 'css!postcss!stylus?sourceMap'),
       },
       {
-        include: /\/node_modules\//,
+        include: exclude,
         loader: 'file?name=vendor/[1]&regExp=node_modules/(.*)',
         test: assets,
       },
       {
-        include,
-        loader: 'file?name=[1]&regExp=src/(.*)',
+        include: appStaticFiles,
+        loader: 'file?name=assets/[1]&regExp=src/assets/(.*)',
         test: assets,
       },
       {
-        include: resolve('./storage'),
+        exclude: [exclude, appStaticFiles],
         loader: 'file?name=[path]/[name].[ext]',
         test: assets,
       },

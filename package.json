@@ -1,31 +1,29 @@
 {
   "scripts": {
-    "json-server": "babel-node ./node_modules/.bin/json-server --watch -c ./config/json-server/config.json ./config/json-server/testdata.babel.js",
+    "json-server": "babel-node ./node_modules/.bin/json-server --watch -r ./config/json-server/routes.json -c ./config/json-server/config.json ./config/json-server/testdata.babel.js",
     "webpack": "webpack --config=./config/webpack/dev.babel.js -c --process",
     "clean": "rimraf -rf ./dist",
     "sleep": "sleep 3",
-
     "dev": "npm-run-all -p watch json-server",
     "watch": "npm run webpack -- -w",
     "predev": "npm run clean",
-
     "semantic": "gulp --gulpfile src/semantic/gulpfile.js",
-
     "start": "npm-run-all -p webpack-dev-server json-server open-dev-url",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack/dev.babel.js --content-base=./src",
     "open-dev-url": "npm-run-all sleep open-dev",
     "open-dev": "open-url localhost:8000",
-
     "serve": "npm-run-all build start-server-and-open-prod-url",
     "build": "NODE_ENV=production webpack --config=./config/webpack/prod.babel.js -c --process -p",
     "start-server-and-open-prod-url": "npm-run-all -p open-prod-url json-server",
     "open-prod-url": "npm-run-all sleep open-prod",
     "open-prod": "open-url localhost:8080",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "gh-pages": "NODE_ENV=production webpack --config=./config/webpack/gh-pages.babel.js -c --process -p"
   },
   "dependencies": {
-    "angular": "^1.5.8",
     "@angular/router": "^0.2.0",
+    "angular": "^1.5.8",
+    "angular-component-router-active": "0.0.6",
     "jquery": "^3.1.1",
     "semantic-ui": "^2.2.4"
   },
@@ -38,20 +36,20 @@
     "babel-preset-es2015": "*",
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.16.3",
-    "css-loader": "^0.25.0",
+    "base-href-webpack-plugin": "^1.0.0",
+    "css-loader": "^0.26.0",
     "cssnano": "^3.7.6",
     "extract-text-webpack-plugin": "^1.0.1",
     "faker": "^3.1.0",
     "file-loader": "^0.9.0",
-    "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.22.0",
-    "json-server": "^0.8.22",
+    "json-server": "^0.9.0",
     "lodash": "^4.16.4",
     "ng-annotate-loader": "^0.2.0",
     "ng-cache-loader": "0.0.21",
     "npm-run-all": "^3.1.0",
     "open-url": "^2.0.2",
-    "postcss-loader": "^0.13.0",
+    "postcss-loader": "^1.1.1",
     "resolve-url-loader": "^1.6.0",
     "rimraf": "^2.5.4",
     "source-map-loader": "^0.1.5",
@@ -83,5 +81,13 @@
   "main": "index.js",
   "author": "daggerok",
   "name": "angularjs-bookmarks",
-  "description": "angularjs-bookmarks"
+  "description": "angularjs-bookmarks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daggerok/angularjs-bookmarks.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daggerok/angularjs-bookmarks/issues"
+  },
+  "homepage": "https://github.com/daggerok/angularjs-bookmarks#readme"
 }

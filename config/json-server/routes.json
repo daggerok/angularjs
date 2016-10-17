@@ -1,0 +1,5 @@
+{
+  "/api/all": "/all",
+  "/api/bookmarks": "/bookmarks",
+  "/api/categories": "/categories"
+}

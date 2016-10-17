@@ -1,43 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <base href="/">
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-  <base href="/">
   <title>angularjs-bookmarks</title>
 </head>
 <body class="pushable">
 
-<!-- Following Menu -->
-<div class="ui large top fixed hidden menu">
-  <div class="ui container">
-
-    <app-links></app-links>
-
-    <div class="right menu">
-      <div class="item">
-        <a ng-href="#/login" class="ui button">Login</a>
-      </div>
-      <div class="item">
-        <a ng-href="#/signup" class="ui primary button">Sign Up</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!--sync it with app-following-menu and app-header components-->
-<!-- Sidebar Menu -->
-<div class="ui vertical inverted sidebar menu">
-  <app-links></app-links>
-  <a ng-href="#/login" class="item">Login</a>
-  <a ng-href="#/signup" class="item">Sign Up</a>
-</div>
+<app-following-menu></app-following-menu>
+<app-sidebar-menu class="ui vertical inverted sidebar menu"></app-sidebar-menu>
 
 <!-- Page Contents -->
-<div class="pusher">
-  <app></app>
-</div>
-
+<app class="pusher">loading...</app>
 </body>
 </html>
