@@ -10,9 +10,14 @@
     <div ng-repeat="bookmark in $ctrl.bookmarks">
       <div class="row">
         <app-bookmark ng-hide="$ctrl.isEditingBookmark(bookmark)"
-                      selected="$ctrl.toggleEditing(bookmark)"
+                      selected="$ctrl.setEditingBookmark(bookmark)"
                       bookmark="bookmark"
                       class="item"></app-bookmark>
+        <app-edit-bookmark ng-show="$ctrl.isEditingBookmark(bookmark)"
+                           on-update="$ctrl.onUpdate($event)"
+                           on-cancel="$ctrl.onCancel($event)"
+                           bookmark="bookmark"
+                           class="item"></app-edit-bookmark>
       </div>
     </div>
   </div>

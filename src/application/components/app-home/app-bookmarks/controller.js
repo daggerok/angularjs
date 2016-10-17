@@ -36,4 +36,28 @@ export default class BookmarksController {
   filterBookmarksByTitle(title) {
     if (title) this.bookmarks = this.all.filter(bookmark => title === bookmark.title);
   }
+
+  setEditingBookmark(bookmark) {
+    this.editingBookmark = Object.assign({}, bookmark);
+  }
+
+  isEditingBookmark(bookmark) {
+    return this.editingBookmark
+      && this.editingBookmark.id
+      && this.editingBookmark.id === bookmark.id
+  }
+
+  onUpdate($event) {
+    this.all
+        .filter(b => b.id === $event.id)
+        .map(b => b.name = $event.name);
+    this.editingBookmark = null;
+  }
+
+  onCancel($event) {
+    this.all
+        .filter(b => b.id === $event.id)
+        .map(b => b.name = this.editingBookmark.name);
+    this.editingBookmark = null;
+  }
 }

@@ -1,10 +1,9 @@
+// jquery
 import 'jquery';
-// import 'semantic-ui/dist/semantic.js';
-// import 'semantic-ui/dist/semantic.css';;
 // semantic-ui scripts
-import 'semantic-ui/dist/components/visibility.js'
-import 'semantic-ui/dist/components/sidebar.js'
-import 'semantic-ui/dist/components/transition.js'
+import 'semantic-ui/dist/components/visibility.js';
+import 'semantic-ui/dist/components/sidebar.js';
+import 'semantic-ui/dist/components/transition.js';
 // semantic-ui styles
 import 'semantic-ui/dist/components/reset.css';
 import 'semantic-ui/dist/components/site.css';
