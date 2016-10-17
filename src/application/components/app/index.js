@@ -5,4 +5,4 @@ import Component from './component';
 export default angular
   .module('app.component', [])
   .component('app', Component)
-  .config(['$urlRouterProvider', '$locationProvider', '$stateProvider', Config]);
+  .config(['$stateProvider', Config]);
