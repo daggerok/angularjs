@@ -5,8 +5,8 @@ const vendor = 'vendor';
 
 config.entry[vendor] = [
   'jquery',
-  'bootstrap/dist/js/bootstrap.js',
-  'bootstrap/dist/css/bootstrap.css',
+  'semantic-ui/dist/semantic.js',
+  'semantic-ui/dist/semantic.css',
   'angular/angular-csp.css',
   'angular',
   'angular-ui-router',

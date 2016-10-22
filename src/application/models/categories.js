@@ -14,6 +14,6 @@ export default class CategoryModel {
   }
 
   static uri() {
-    return '/api/categories';
+    return './api/categories';
   }
 }

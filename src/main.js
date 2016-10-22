@@ -1,3 +1,5 @@
+import './vendor';
+import './assets';
 import angular from 'angular';
 import application from './application';
 
