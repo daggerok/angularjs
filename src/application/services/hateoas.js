@@ -1,10 +1,14 @@
 export default class HateoasService {
-  constructor() {
-    this.embed = (resp) => resp.data._embedded || {};
+  embed(resp) {
+    return resp.data._embedded || {};
   }
 
-  bookmarks(resp) {
-    return this.embed(resp).bookmarks || [];
+  posts(resp) {
+    return this.embed(resp).posts || [];
+  }
+
+  users(resp) {
+    return this.embed(resp).users || [];
   }
 
   categories(resp) {

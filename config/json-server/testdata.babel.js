@@ -1,30 +1,46 @@
+// https://github.com/stympy/faker
 import faker from 'faker';
 
-const size = 15;
+faker.locale = 'ru';
+
+const size = 5;
 const seq = Array(size).fill();
+
+const posts = seq.map((_, id) => { return {
+  id,
+  subject: faker.lorem.sentence(),
+  body: seq.map((_, id) => faker.lorem.paragraphs(size, true)),
+  tags: faker.lorem.words(size),
+  category: faker.internet.domainSuffix()
+}});
+
+const users = seq.map((_, id) => { return {
+  id,
+  name: faker.name.findName(),
+  email: faker.internet.email('who.hoo')
+}});
 
 const categories = seq.map((_, id) => { return {
   id,
-  name: faker.name.title(),
-}});
-
-const bookmarks = categories.map((c, id) => { return {
-  id: c.id,
-  title: faker.name.findName(),
-  url: faker.internet.url(),
-  category: c.name
+  name: faker.internet.domainSuffix()
 }});
 
 export default () => { return {
-  "api/categories": {
+  "posts": {
     _embedded: {
-      categories,
+      posts,
       _links: []
     }
   },
-  "api/bookmarks": {
+  "users": {
     _embedded: {
-      bookmarks,
+      users,
+      _links: []
+    }
+  },
+  "categories": {
+    _embedded: {
+      categories,
       _links: []
     }
   }

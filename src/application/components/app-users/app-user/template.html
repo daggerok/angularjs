@@ -1,0 +1,26 @@
+<div ng-init="
+    $ctrl.editing = false;
+    $ctrl.prev = $ctrl.user.name;
+  ">
+  <div ng-hide="$ctrl.editing">
+    <span ng-click="
+      $ctrl.editing = true;
+    ">{{$ctrl.user.name}}</span>
+  </div>
+  <form ng-show="$ctrl.editing">
+    <input type="text"
+           value="{{$ctrl.user.name}}"
+           ng-model="$ctrl.user.name">
+    <button type="button" class="btn btn-primary"
+            ng-click="
+              $ctrl.prev = $ctrl.user.name;
+              $ctrl.updateUser($ctrl.user);
+              $ctrl.editing = !$ctrl.editing;
+            ">OK</button>
+    <button type="button" class="btn btn-default"
+            ng-click="
+              $ctrl.user.name = $ctrl.prev;
+              $ctrl.editing = !$ctrl.editing;
+            ">Cancel</button>
+  </form>
+</div>

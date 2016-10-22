@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <ul class="list-style-none">
+    <app.user ng-repeat="user in $ctrl.users"
+              update-user="$ctrl.updateUser(user)"
+              user="user"></app.user>
+  </ul>
+</div>

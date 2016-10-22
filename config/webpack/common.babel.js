@@ -9,10 +9,10 @@ const resolve = (rel) => path.resolve(process.cwd(), rel);
 const include = resolve('./node_modules/bootstrap/dist');
 const src = resolve('./src');
 const exclude = /(node_modules|bower_components)/;
-const urlLimit = 'url?limit=1024';
+
 export default {
   entry: {
-    bookmarks: './src/main.js'
+    app: './src/app.js'
   },
 
   output: {
@@ -32,7 +32,7 @@ export default {
       {
         exclude,
         include: src,
-        test: /src.*\.js$/,
+        test: /\.js$/,
         loader: 'ng-annotate!babel',
       },
       {
@@ -57,6 +57,7 @@ export default {
       },
       {
         test: /\.css$/,
+        // include: [resolve('./node_modules/angular'), src],
         include: [resolve('./node_modules/angular'), include, src],
         loader: ExtractPlugin.extract('style', 'css?importloader=1', 'postcss'),
       },
@@ -65,14 +66,13 @@ export default {
         test: /\.styl$/,
         loader: ExtractPlugin.extract('style', 'css!postcss!stylus?sourceMap'),
       },
-      /*
       {
         include,
         loader: 'url',
-        // loader: urlLimit,
+        // loader: 'url?limit=1024',
         test: /\.(eot|otf|woff(2)?|ttf|svg)?$/,
       },
-      */
+      /*
       {
         include,
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
@@ -81,18 +81,19 @@ export default {
       {
         include,
         test: /\.(woff|woff2)$/,
-        loader:`${urlLimit}&prefix=font/`,
+        loader:'url?prefix=font/&limit=1024',
       },
       {
         include,
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: `${urlLimit}&mimetype=app/octet-stream`,
+        loader: 'url?limit=1024&mimetype=application/octet-stream',
       },
       {
         include,
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-        loader: `${urlLimit}&mimetype=image/svg+xml`,
+        loader: 'url?limit=1024&mimetype=image/svg+xml',
       },
+      */
     ]
   },
 
@@ -104,8 +105,8 @@ export default {
   plugins: [
     new ExtractPlugin('[name].css', { allChunks: true }),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      favicon: './src/favicon.ico'
+      template: './src/app.html',
+      favicon: './src/app.ico'
     }),
     new webpack.ProvidePlugin({
       jQuery: 'jquery',

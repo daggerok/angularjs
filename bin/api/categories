@@ -1,0 +1,27 @@
+{
+  "_embedded": {
+    "categories": [
+      {
+        "id": 0,
+        "name": "ru"
+      },
+      {
+        "id": 1,
+        "name": "ru"
+      },
+      {
+        "id": 2,
+        "name": "net"
+      },
+      {
+        "id": 3,
+        "name": "рф"
+      },
+      {
+        "id": 4,
+        "name": "ru"
+      }
+    ],
+    "_links": []
+  }
+}

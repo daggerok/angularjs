@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row">
+    <ul class="list-style-none col-sm-1">
+      <li ng-repeat="category in $ctrl.categories">
+        <app.category category-output="$ctrl.onCategoryClicked(category)"
+                      category="category"></app.category>
+      </li>
+    </ul>
+    <ul class="list-style-none col-sm-11">
+      <li ng-repeat="post in $ctrl.posts">
+        <app.post category="category" post="post"></app.post>
+      </li>
+    </ul>
+  </div>
+</div>

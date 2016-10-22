@@ -1,0 +1,32 @@
+{
+  "_embedded": {
+    "users": [
+      {
+        "id": 0,
+        "name": "Дарья Юдина",
+        "email": "who.hoo.61@mail.ru"
+      },
+      {
+        "id": 1,
+        "name": "Анжела Овчинникова",
+        "email": "who.hoo4@gmail.com"
+      },
+      {
+        "id": 2,
+        "name": "Анфиса Хохлова",
+        "email": "who.hoo_18@hotmail.com"
+      },
+      {
+        "id": 3,
+        "name": "Анжела Турова",
+        "email": "who.hoo_76@ya.ru"
+      },
+      {
+        "id": 4,
+        "name": "Регина Баранова",
+        "email": "who.hoo.@gmail.com"
+      }
+    ],
+    "_links": []
+  }
+}
