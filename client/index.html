@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="jwt">
+<head>
+  <meta charset="UTF-8">
+  <title>node-jwt-ng</title>
+  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/angular/angular-csp.css">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body ng-cloak="" class="container" ng-controller="MainCtrl as vm">
+<div ng-show="vm.user">
+  <div>hi, {{vm.user.username}}!</div>
+  <div ng-class="{hidden: !vm.token()}">
+    <button ng-click="vm.logout()" class="btn btn-default">logout</button>
+  </div>
+</div>
+<h3>login</h3>
+<div>
+  <form ng-submit="vm.login(vm.username, vm.password)">
+    <div class="form-group">
+      <label for="username">Username: <input ng-model="vm.username" class="form-control" type="text" id="username"></label>
+      <label for="password">Password: <input ng-model="vm.password" class="form-control" type="password" id="password"></label>
+      <button type="submit" class="btn btn-success">login</button>
+    </div>
+  </form>
+</div>
+<h3>get random user</h3>
+<div>
+  <button class="btn btn-primary" ng-click="vm.getUser()">get user</button>
+  <pre class="pre-scrollable" ng-bind="vm.user | json"></pre>
+</div>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
