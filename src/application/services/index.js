@@ -2,5 +2,5 @@ import angular from 'angular';
 import HateoasService from './hateoas';
 
 export default angular
-  .module('bm.services', [])
+  .module('angularjs-redux.services', [])
   .service('HateoasService', HateoasService);

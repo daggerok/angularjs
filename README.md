@@ -1,9 +1,15 @@
 # angularjs-redux [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=angularjs-redux)](https://travis-ci.org/daggerok/angularjs)
 
+development:
+
 ```bash
 npm i
 npm start
-npm run dev
 npm run build
-npm run serve
+```
+
+gihub pages deployment:
+
+```fish
+fish bin/gh-pages.fish
 ```
