@@ -1,0 +1,14 @@
+version: '2'
+services:
+  angularjs-breeze-nginx:
+    container_name: angularjs-breeze-nginx
+    image: nginx:latest
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+    ports:
+      - "80:80"
+    networks:
+      - angularjs-breeze-network
+networks:
+  angularjs-breeze-network:
+    driver: bridge
