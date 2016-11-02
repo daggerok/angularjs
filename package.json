@@ -1,5 +1,5 @@
 {
-  "name": "angularjs",
+  "name": "angularjs-redux",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -67,14 +67,14 @@
   ],
   "main": "index.js",
   "author": "daggerok",
-  "description": "angularjs",
+  "description": "angularjs-redux",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/daggerok/angularjs.git"
+    "url": "git+https://github.com/daggerok/angularjs-redux.git"
   },
   "bugs": {
-    "url": "https://github.com/daggerok/angularjs/issues"
+    "url": "https://github.com/daggerok/angularjs-redux/issues"
   },
-  "homepage": "https://github.com/daggerok/angularjs#readme"
+  "homepage": "https://github.com/daggerok/angularjs-redux#readme"
 }

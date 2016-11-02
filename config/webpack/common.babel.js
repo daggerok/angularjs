@@ -65,14 +65,6 @@ export default {
         test: /\.styl$/,
         loader: ExtractPlugin.extract('style', 'css!postcss!stylus?sourceMap'),
       },
-      /*
-      {
-        include,
-        loader: 'url',
-        // loader: urlLimit,
-        test: /\.(eot|otf|woff(2)?|ttf|svg)?$/,
-      },
-      */
       {
         include,
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,

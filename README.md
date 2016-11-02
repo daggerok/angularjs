@@ -1,4 +1,4 @@
-# angularjs [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=master)](https://travis-ci.org/daggerok/angularjs)
+# angularjs-redux [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=angularjs-redux)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i
