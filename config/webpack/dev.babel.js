@@ -1,4 +1,4 @@
-import config from './common.babel';
+import config from './common/config.babel';
 
 config.output.sourceMapFilename = 'maps/[file].map';
 
@@ -9,11 +9,19 @@ export default {
 
   devServer: {
     port: 8000,
-    historyApiFallback: true,
-    progress: true,
     inline: true,
+    progress: true,
+    stats: 'minimal',
+
+    historyApiFallback: {
+      index: '/'
+    },
+
     proxy: {
-      "/api": "http://localhost:8080"
+      "/api": {
+        target: "http://localhost:8080",
+        secure: false
+      }
     }
   }
 };

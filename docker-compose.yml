@@ -1,0 +1,14 @@
+version: '2'
+services:
+  angularjs-nginx:
+    container_name: angularjs-nginx
+    image: nginx:latest
+    volumes:
+      - ./dist:/usr/share/nginx/html:ro
+    ports:
+      - "80:80"
+    networks:
+      - angularjs-network
+networks:
+  angularjs-network:
+    driver: bridge

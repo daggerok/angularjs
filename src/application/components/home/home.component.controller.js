@@ -1,4 +1,4 @@
-export default class BmHomeController {
+export default class HomeController {
   constructor() {
     this.$ctrl = this;
   }

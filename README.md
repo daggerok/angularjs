@@ -1,4 +1,4 @@
-# angularjs [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=master)](https://travis-ci.org/daggerok/angularjs)
+# material [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=material)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i
