@@ -8,7 +8,10 @@ config.devtool = '#source-map';
 
 config.plugins = [
   ...config.plugins,
-  new HtmlWebpackPlugin(htmlConfig),
+  new HtmlWebpackPlugin({
+    ...htmlConfig,
+    template: './src/assets/index-gh-pages.html',
+  }),
   new DefinePlugin({
     'process.env': {
       'NODE_ENV': JSON.stringify('production')

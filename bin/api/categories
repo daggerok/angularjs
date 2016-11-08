@@ -1,0 +1,67 @@
+{
+  "_embedded": {
+    "categories": [
+      {
+        "id": 0,
+        "name": "Investor Factors Representative"
+      },
+      {
+        "id": 1,
+        "name": "Global Applications Developer"
+      },
+      {
+        "id": 2,
+        "name": "Direct Quality Architect"
+      },
+      {
+        "id": 3,
+        "name": "Dynamic Intranet Associate"
+      },
+      {
+        "id": 4,
+        "name": "Chief Integration Supervisor"
+      },
+      {
+        "id": 5,
+        "name": "Principal Program Specialist"
+      },
+      {
+        "id": 6,
+        "name": "Product Factors Supervisor"
+      },
+      {
+        "id": 7,
+        "name": "Chief Accountability Architect"
+      },
+      {
+        "id": 8,
+        "name": "Investor Communications Administrator"
+      },
+      {
+        "id": 9,
+        "name": "Lead Factors Representative"
+      },
+      {
+        "id": 10,
+        "name": "Central Brand Planner"
+      },
+      {
+        "id": 11,
+        "name": "Legacy Factors Officer"
+      },
+      {
+        "id": 12,
+        "name": "National Markets Designer"
+      },
+      {
+        "id": 13,
+        "name": "Chief Paradigm Agent"
+      },
+      {
+        "id": 14,
+        "name": "Future Assurance Producer"
+      }
+    ],
+    "_links": []
+  }
+}

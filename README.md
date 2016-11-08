@@ -1,4 +1,4 @@
-# angularjs [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=master)](https://travis-ci.org/daggerok/angularjs)
+# angularjs-quick-start [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=quickstart)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i

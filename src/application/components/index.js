@@ -1,14 +1,15 @@
 import angular from 'angular';
-import uiRouter from 'angular-ui-router';
-import BmAppModule from './bm.app';
-import BmHeaderModule from './bm.header';
-import BmFooterModule from './bm.footer';
-import BmHomeModule from './bm.home';
 
-export default angular.module('bm.components', [
-  uiRouter,
-  BmAppModule.name,
-  BmHeaderModule.name,
-  BmFooterModule.name,
-  BmHomeModule.name,
+import Config from './app.component.config';
+import Component from './app.component';
+import HomeModule from './home';
+
+// root component:
+const app = angular.module('app.component', [
+  HomeModule.name
 ]);
+
+app.component('app', Component);
+app.config(['$stateProvider', Config]);
+
+export default app;

@@ -1,0 +1,97 @@
+{
+  "_embedded": {
+    "bookmarks": [
+      {
+        "id": 0,
+        "title": "Alexandre Stanton",
+        "url": "http://janiya.info",
+        "category": "Investor Factors Representative"
+      },
+      {
+        "id": 1,
+        "title": "Melyssa Simonis",
+        "url": "http://omer.name",
+        "category": "Global Applications Developer"
+      },
+      {
+        "id": 2,
+        "title": "Jerome Murazik",
+        "url": "https://mireille.info",
+        "category": "Direct Quality Architect"
+      },
+      {
+        "id": 3,
+        "title": "Delpha Denesik PhD",
+        "url": "https://aidan.biz",
+        "category": "Dynamic Intranet Associate"
+      },
+      {
+        "id": 4,
+        "title": "Delphine Trantow",
+        "url": "http://kendra.biz",
+        "category": "Chief Integration Supervisor"
+      },
+      {
+        "id": 5,
+        "title": "Maxwell Lindgren",
+        "url": "http://sid.org",
+        "category": "Principal Program Specialist"
+      },
+      {
+        "id": 6,
+        "title": "Eino Kunde",
+        "url": "http://ruth.org",
+        "category": "Product Factors Supervisor"
+      },
+      {
+        "id": 7,
+        "title": "Lucile Reichert",
+        "url": "https://geoffrey.biz",
+        "category": "Chief Accountability Architect"
+      },
+      {
+        "id": 8,
+        "title": "Marty Nikolaus",
+        "url": "https://jonas.com",
+        "category": "Investor Communications Administrator"
+      },
+      {
+        "id": 9,
+        "title": "Adaline Schulist",
+        "url": "http://andre.biz",
+        "category": "Lead Factors Representative"
+      },
+      {
+        "id": 10,
+        "title": "Mr. Diamond Cartwright",
+        "url": "http://queenie.info",
+        "category": "Central Brand Planner"
+      },
+      {
+        "id": 11,
+        "title": "Steve Aufderhar",
+        "url": "http://trevion.net",
+        "category": "Legacy Factors Officer"
+      },
+      {
+        "id": 12,
+        "title": "Jerrod Sauer",
+        "url": "https://daisha.net",
+        "category": "National Markets Designer"
+      },
+      {
+        "id": 13,
+        "title": "Nicklaus Powlowski",
+        "url": "http://edwina.net",
+        "category": "Chief Paradigm Agent"
+      },
+      {
+        "id": 14,
+        "title": "Zena Luettgen",
+        "url": "https://louisa.biz",
+        "category": "Future Assurance Producer"
+      }
+    ],
+    "_links": []
+  }
+}
