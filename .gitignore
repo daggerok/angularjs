@@ -5,5 +5,5 @@ app/vendors/
 app/dist/
 .idea/
 dist/
-!app/src/assets/.gitkeep
+!dist/.gitkeep
 !app/dist/.gitkeep
