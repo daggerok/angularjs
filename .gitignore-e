@@ -6,5 +6,5 @@ app/vendors/
 .DS_Store
 app/dist/
 .idea/
-dist/
+#dist/
 *-e

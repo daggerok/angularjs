@@ -7,7 +7,7 @@ module AngularMaterialApp {
         .loadAllUsers()
         .then((users: User[]) => {
           $ctrl.users = users;
-          console.log(JSON.stringify(users, null, 2));
+          // console.log(JSON.stringify(users, null, 2));
         });
     }
     private users: User[] = [];

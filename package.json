@@ -3,18 +3,23 @@
   "version": "0.0.1",
   "main": "app/index.html",
   "scripts": {
+    "postinstall": "npm-run-all bower",
+    "bower": "bower install angular-material",
+
     "clean": "rimraf -rf ./app/dist/*, ./dist/*",
+    "postclean": "mkdir -p ./app/dist ./dist/dist",
+
     "deploy:dist": "ncp ./app/dist ./dist/dist",
     "deploy:index": "ncp ./app/index.html ./dist/index.html",
     "deploy:vendors": "ncp ./app/vendors ./dist/vendors",
-    "deploy": "npm-run-all clean prestart deploy:*",
+    "deploy:fonts": "ncp ./app/fonts ./dist/fonts",
+    "deploy": "npm-run-all clean build deploy:*",
 
     "ts": "tsc -p ./app/src/",
-    "postinstall": "npm-run-all bower",
-    "prestart": "npm-run-all -p ts scss",
-    "bower": "bower install angular-material",
+    "build": "npm-run-all -p ts scss",
+    "scss": "node-sass -r ./app/src/scss -o ./app/dist",
+
     "start": "npm-run-all -p watch-ts watch-scss serve",
-    "scss": "node-sass -r ./app/src/assets/scss -o ./app/dist",
     "watch-ts": "concurrently -p '[{name}]' -n 'tsc' -c 'bgGreen.bold' 'npm run ts -- -w' --kill-others --success first",
     "watch-scss": "concurrently -p '[{name}]' -n 'scss' -c 'bgBlue.bold' 'npm run scss -- -w' --kill-others --success first",
     "serve": "concurrently -p '[{name}]' -n 'http' -c 'bgYellow.bold' 'lite-server --config ./lite-server.js' --kill-others --success first"
@@ -23,15 +28,15 @@
     "bower_directory": "./app/vendors"
   },
   "devDependencies": {
-    "@types/angular": "^1.5.19",
-    "@types/angular-material": "^1.1.40",
+    "@types/angular": "^1.5.20",
+    "@types/angular-material": "^1.1.41",
     "bower": "^1.8.0",
     "concurrently": "^3.1.0",
     "connect-history-api-fallback": "^1.3.0",
     "http-proxy-middleware": "^0.17.2",
     "lite-server": "^2.2.2",
     "ncp": "^2.0.0",
-    "node-sass": "^3.12.2",
+    "node-sass": "^3.13.0",
     "npm-run-all": "^3.1.1",
     "rimraf": "^2.5.4",
     "typescript": "^2.1.1"
