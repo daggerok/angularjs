@@ -4,9 +4,10 @@ const httpProxyMiddleware = require('http-proxy-middleware');
 module.exports = (bs) => ({
   port: 3000,
   files: [
-    './app/index.html',
-    './app/dist/**/*.*',
-    './app/src/**/*.css',
+    // './app/index.html',
+    // './app/dist/**/*.*',
+    // './app/src/**/*.css',
+    './app/**/*.*',
   ],
   watchOptions: {
     ignored: [

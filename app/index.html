@@ -10,13 +10,17 @@
   <link rel="stylesheet" href="./dist/main.css">
   <title>angularjs-ts-material</title>
 </head>
-<body ng-cloak="">
+<body ng-cloak="" ng-controller="mainController as vm">
 <h1>hello</h1>
+<div>{{ vm.message }}</div>
 <script src="./vendors/angular/angular.min.js"></script>
 <script src="./vendors/angular-animate/angular-animate.min.js"></script>
 <script src="./vendors/angular-aria/angular-aria.min.js"></script>
 <script src="./vendors/angular-messages/angular-messages.min.js"></script>
 <script src="./vendors/angular-material/angular-material.min.js"></script>
+<script src="./dist/models.js"></script>
+<script src="./dist/services/user.js"></script>
+<script src="./dist/controllers/mainController.js"></script>
 <script src="./dist/boot.js"></script>
 </body>
 </html>
