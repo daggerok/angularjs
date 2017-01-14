@@ -2,10 +2,15 @@
   md-toolbar
 </md-toolbar>
 
-<md-sidenav md-is-locked-open="true" class="lightblue">
-  md-sidenave
-</md-sidenav>
+<div layout="row" 
+     class="container">
 
-<md-content class="lightgreen">
-  {{ $ctrl.greeting }}
-</md-content>
+  <md-sidenav md-is-locked-open="true" class="lightblue">
+    md-sidenave
+  </md-sidenav>
+
+  <md-content class="lightgreen">
+    {{ $ctrl.greeting }}
+  </md-content>
+</div>
+
