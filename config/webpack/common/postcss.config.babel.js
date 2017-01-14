@@ -1,7 +1,7 @@
-import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
+import autoprefixer from 'autoprefixer';
 
 export default [
-  autoprefixer,
+  autoprefixer({ browsers: 'last 4 versions' }),
   cssnano
 ];

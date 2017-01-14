@@ -1,5 +1,6 @@
 import angular from 'angular';
 
+import './main.styl';
 import application from './application';
 
 export default angular.bootstrap(document, [ application.name ], {

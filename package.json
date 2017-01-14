@@ -3,18 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "precompile": "rimraf -rf ./dist",
-    "compile": "webpack --config=./config/webpack/prod.babel.js -c --process -p",
+    "predist": "rimraf -rf ./dist",
+    "dist": "webpack --config=./config/webpack/prod.babel.js -c --process -p",
+
     "serve": "npm-run-all build json-server",
-    "build": "cross-env NODE_ENV=production npm run compile",
+    "build": "cross-env NODE_ENV=production npm run dist",
     "json-server": "babel-node ./node_modules/.bin/json-server --watch -c ./config/json-server/config.json -r ./config/json-server/routes.json ./config/json-server/testdata.babel.js",
 
-    "gh-pages": "cross-env NODE_ENV=ghpages npm run compile",
+    "gh-pages": "cross-env NODE_ENV=ghpages npm run dist",
 
     "predev": "npm run clean",
     "dev": "npm-run-all -p watch json-server",
-    "start": "npm-run-all -p webpack-dev-server json-server",
     "watch": "webpack -w --config=./config/webpack/dev.babel.js -c --process",
+
+    "start": "npm-run-all -p webpack-dev-server json-server",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack/dev.babel.js --content-base=./src"
   },
   "dependencies": {
@@ -22,7 +24,9 @@
     "angular-animate": "1.6.1",
     "angular-aria": "1.6.1",
     "angular-material": "1.1.1",
-    "angular-ui-router": "0.3.2"
+    "angular-ui-router": "0.3.2",
+    "normalize.css": "5.0.0",
+    "roboto-fontface": "0.6.0"
   },
   "devDependencies": {
     "autoprefixer": "6.6.1",

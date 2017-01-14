@@ -1,33 +1,26 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import htmlConfig from './common/html.config.babel';
 import config, { publicPath } from './common/config.babel';
+import project from './common/project.config.babel';
 
-config.output.sourceMapFilename = 'maps/[file].map';
+config.output.sourceMapFilename = `[file].map?v=${project.version}`;
 
-config.plugins = [
-  ...config.plugins,
-  new HtmlWebpackPlugin({
-    ...htmlConfig,
-    minify: false,
-  }),
-];
+const proxy = () => ({
+  target: 'http://localhost:8080',
+  secure: false,
+});
 
 export default {
   ...config,
-  devtool: '#cheap-module-inline-source-map',
+  devtool: '#eval',
   devServer: {
     port: 8000,
     inline: true,
     progress: true,
     stats: 'minimal',
     historyApiFallback: {
-      index: publicPath
+      index: publicPath,
     },
     proxy: {
-      "/api": {
-        target: "http://localhost:8080",
-        secure: false
-      }
+      '/api': proxy(),
     }
   }
 };

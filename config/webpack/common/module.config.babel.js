@@ -1,5 +1,7 @@
 import path from 'path';
 
+import { isProdOrGhpages } from './project.config.babel';
+
 const resolve = (rel) => path.resolve(process.cwd(), rel);
 
 const resources = resolve('./src/resources');
@@ -10,12 +12,12 @@ const assets = /\.(raw|gif|png|jpg|jpeg|otf|eot|woff|woff2|ttf|svg|ico)$/;
 export default (extractCSS) => ({
 
   preLoaders: [
-    {
+    isProdOrGhpages ? undefined : {
       include,
       test: /\.js$/,
       loader: 'source-map',
     }
-  ],
+  ].filter(pl => !!pl),
 
   loaders: [
     {
@@ -55,17 +57,17 @@ export default (extractCSS) => ({
     {
       test: /\.css$/,
       include: [
-        resolve('./node_modules/bootstrap/dist'),
+        resolve('./node_modules/normalize.css'),
         resolve('./node_modules/angular'),
         resolve('./node_modules/angular-material'),
         include,
       ],
-      loader: extractCSS.extract('style', 'css?importloader=1&sourceMap', 'postcss'),
+      loader: extractCSS.extract('style', `css?importloader=1${isProdOrGhpages ? '' : '&sourceMap'}`, 'postcss'),
     },
     {
       include,
       test: /\.styl$/,
-      loader: extractCSS.extract('style', 'css!postcss!stylus?sourceMap'),
+      loader: extractCSS.extract('style', `css!postcss!stylus${isProdOrGhpages ? '' : '?sourceMap'}`),
     },
     {
       include: exclude,
