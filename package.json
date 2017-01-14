@@ -3,24 +3,25 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "sleep": "sleep 1",
-    "predev": "npm run clean",
-    "prebuild": "npm run clean",
-    "clean": "rimraf -rf ./dist",
+    "precompile": "rimraf -rf ./dist",
+    "compile": "webpack --config=./config/webpack/prod.babel.js -c --process -p",
     "serve": "npm-run-all build json-server",
+    "build": "cross-env NODE_ENV=production npm run compile",
+    "json-server": "babel-node ./node_modules/.bin/json-server --watch -c ./config/json-server/config.json -r ./config/json-server/routes.json ./config/json-server/testdata.babel.js",
+
+    "gh-pages": "cross-env NODE_ENV=ghpages npm run compile",
+
+    "predev": "npm run clean",
     "dev": "npm-run-all -p watch json-server",
     "start": "npm-run-all -p webpack-dev-server json-server",
     "watch": "webpack -w --config=./config/webpack/dev.babel.js -c --process",
-    "build": "NODE_ENV=production webpack --config=./config/webpack/prod.babel.js -c --process -p",
-    "gh-pages": "NODE_ENV=production webpack --config=./config/webpack/gh-pages.babel.js -c --process -p",
-    "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack/dev.babel.js --content-base=./src",
-    "json-server": "babel-node ./node_modules/.bin/json-server --watch -c ./config/json-server/config.json -r ./config/json-server/routes.json ./config/json-server/testdata.babel.js"
+    "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack/dev.babel.js --content-base=./src"
   },
   "dependencies": {
-    "angular": "^1.6.1",
-    "angular-animate": "^1.6.1",
-    "angular-aria": "^1.6.1",
-    "angular-material": "^1.1.1",
+    "angular": "1.6.1",
+    "angular-animate": "1.6.1",
+    "angular-aria": "1.6.1",
+    "angular-material": "1.1.1",
     "angular-ui-router": "0.3.2"
   },
   "devDependencies": {
@@ -34,6 +35,7 @@
     "babel-register": "6.18.0",
     "base-href-webpack-plugin": "1.0.0",
     "connect-history-api-fallback": "1.3.0",
+    "cross-env": "3.1.4",
     "css-loader": "0.26.1",
     "cssnano": "3.10.0",
     "extract-text-webpack-plugin": "1.0.1",
