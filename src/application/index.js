@@ -12,7 +12,7 @@ const application = angular.module('app', [
   ComponentsModule.name,
 ]);
 
-import './infrastructure/base.href.config';
+// import './infrastructure/base.href.config';
 import Config from './infrastructure/application.config';
 
 application.config(['$urlRouterProvider', '$locationProvider', Config]);

@@ -16,16 +16,16 @@ const bookmarks = categories.map((c, id) => { return {
 }});
 
 export default () => { return {
-  "api/categories": {
+  "categories": {
     _embedded: {
       categories,
-      _links: []
-    }
+      _links: [],
+    },
   },
-  "api/bookmarks": {
+  "bookmarks": {
     _embedded: {
       bookmarks,
-      _links: []
-    }
-  }
+      _links: [],
+    },
+  },
 }};
