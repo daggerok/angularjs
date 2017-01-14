@@ -1,42 +1,45 @@
 {
   "name": "ng-protractor-full-testcycle",
   "version": "0.0.1",
-  "description": "```bash npm i npm test ```",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "bower-install": "bower install angular bootstrap",
-    "wd-update": "webdriver-manager update",
-    "postinstall": "npm-run-all -p bower-install wd-update",
-    "wd-start": "webdriver-manager start",
-    "wd-stop": "webdriver-manager stop",
     "start": "browser-sync start -c ./config/bs-config.js",
-    "bs-e2e-start": "browser-sync start -c ./config/bs-config.js --files=false --no-open --no-notify --no-online --no-ui --no-ghost-mode --no-inject-changes --no-reload-on-restart",
-    "start-concurrently": "concurrently --prefix '[{name}]' --names 'RUN SELENIUM,RUN HTTP' --prefix-colors 'bgMagenta.bold,bgGreen.bold' 'npm run wd-start' 'npm run bs-e2e-start' &",
-    "protractor": "protractor ./config/protractor.js",
-    "sleep": "sleep 2",
-    "run-protractor": "concurrently --prefix '[{name}]' --names 'E2E TESTS' --prefix-colors 'bgYellow.bold,bgMagenta.bold' 'npm-run-all sleep protractor'",
+    "wd:stop": "webdriver-manager shutdown",
+    "wd:update": "webdriver-manager update",
+    "wd:start": "webdriver-manager start --logging=webdriver.log &",
+    "pretest": "npm-run-all wd:start > wd.log &",
     "test": "npm-run-all -p start-concurrently run-protractor",
-    "postrun-protractor": "concurrently --prefix '[{name}]' --names 'STOP SELENIUM' --prefix-colors 'bgBlue.bold' 'npm run wd-stop' &",
-    "postwd-stop": "true | killall -9 node"
+    "bs-e2e-start": "browser-sync start -c ./config/bs-config.js --files=false --no-open --no-notify --no-online --no-ui --no-ghost-mode --no-inject-changes --no-reload-on-restart",
+    "start-concurrently": "concurrently --prefix '[{name}]' --names 'HTTP' --prefix-colors 'bgMagenta.bold' 'npm run bs-e2e-start' &",
+    "run-protractor": "concurrently --prefix '[{name}]' --names 'E2E TESTS' --prefix-colors 'bgYellow.bold' 'npm-run-all sleep protractor'",
+    "sleep": "sleep 2",
+    "protractor": "protractor ./config/protractor.js",
+    "posttest": "npm-run-all stop:*",
+    "stop:wd": "webdriver-manager shutdown",
+    "stop:bs": "true|kill $(ps waux|grep 'browser-sync'|grep -v grep|awk '{print $2}')"
   },
-  "keywords": [],
+  "keywords": [
+    "angular",
+    "protractor"
+  ],
   "author": "daggerok",
   "license": "ISC",
   "devDependencies": {
-    "bower": "^1.7.9",
-    "browser-sync": "^2.17.0",
-    "concurrently": "^3.1.0",
-    "connect-history-api-fallback": "^1.3.0",
-    "npm-run-all": "^3.1.0",
-    "protractor": "^4.0.9"
+    "bower": "1.8.0",
+    "browser-sync": "2.18.6",
+    "concurrently": "3.1.0",
+    "connect-history-api-fallback": "1.3.0",
+    "npm-run-all": "4.0.0",
+    "protractor": "5.0.0"
   },
   "config": {
     "bower_directory": "vendor"
   },
   "dependencies": {
-    "concurrently": "^3.1.0",
-    "protractor": "^4.0.9",
-    "npm-run-all": "^3.1.0"
+    "angular": "1.6.1",
+    "bootstrap": "3.3.7",
+    "jquery": "3.1.1"
   },
   "repository": {
     "type": "git",

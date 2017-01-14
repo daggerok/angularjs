@@ -1,1 +1,5 @@
-(() => angular.bootstrap(document, [APP_NAME]))();
+(function() {
+  'use strict';
+
+  angular.bootstrap(document, [APP_NAME])
+})();

@@ -1,3 +1,7 @@
 const APP_NAME = 'app';
 
-(() => angular.module(APP_NAME, []))();
+(function() {
+  'use strict';
+
+  angular.module(APP_NAME, []);
+})();

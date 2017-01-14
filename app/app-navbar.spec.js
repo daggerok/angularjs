@@ -1,4 +1,4 @@
-const { endpoint } = require('../../../config/e2e.settings');
+const { endpoint } = require('../config/e2e.settings.js');
 
 describe('app homepage', function() {
 
