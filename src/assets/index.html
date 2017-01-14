@@ -8,7 +8,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>angular-material</title>
 </head>
-<body>
-<app>loading...</app>
+<body layout="column">
+<!--<app>loading...</app>-->
+  <md-toolbar>
+    md-toolbar
+  </md-toolbar>
+
+  <div layout="row" class="container" flex="">
+    <md-sidenav md-is-locked-open="true" class="lightblue">
+      md-sidenave
+    </md-sidenav>
+
+    <md-content class="lightgreen" flex="">
+      <app-home></app-home>
+    </md-content>
+  </div>
 </body>
 </html>
