@@ -3,12 +3,15 @@
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": ">=6 <8"
+  },
   "scripts": {
+    "postinstall": "webdriver-manager update",
     "start": "browser-sync start -c ./config/bs-config.js",
     "wd:stop": "webdriver-manager shutdown",
-    "wd:update": "webdriver-manager update",
     "wd:start": "webdriver-manager start --logging=webdriver.log &",
-    "pretest": "npm-run-all wd:start > wd.log &",
+    "pretest": "npm-run-all wd:* > wd.log &",
     "test": "npm-run-all -p start-concurrently run-protractor",
     "bs-e2e-start": "browser-sync start -c ./config/bs-config.js --files=false --no-open --no-notify --no-online --no-ui --no-ghost-mode --no-inject-changes --no-reload-on-restart",
     "start-concurrently": "concurrently --prefix '[{name}]' --names 'HTTP' --prefix-colors 'bgMagenta.bold' 'npm run bs-e2e-start' &",
