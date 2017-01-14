@@ -2,11 +2,13 @@
 !.idea/angularjs.iml
 !.idea/jsLibraryMappings.xml
 !.idea/watcherTasks.xml
+!.idea/vcs.xml
 bower_components/
 npm-debug.log*
 node_modules/
 .DS_Store
 dist/
 .tmp
+.log
 temp
 tmp

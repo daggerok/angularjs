@@ -1,5 +1,5 @@
 export default ($stateProvider) => $stateProvider.state({
-  // url: '',
+  url: '',
   name: 'app',
   abstract: true,
   template: '<app></app>',

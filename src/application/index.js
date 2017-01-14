@@ -4,6 +4,7 @@ import uiRouter from 'angular-ui-router';
 import ModelsModule from './models';
 import ServicesModule from './services';
 import ComponentsModule from './components';
+import Config from './infrastructure/application.config';
 
 const application = angular.module('app', [
   uiRouter,
@@ -11,9 +12,6 @@ const application = angular.module('app', [
   ServicesModule.name,
   ComponentsModule.name,
 ]);
-
-// import './infrastructure/base.href.config';
-import Config from './infrastructure/application.config';
 
 application.config(['$urlRouterProvider', '$locationProvider', Config]);
 

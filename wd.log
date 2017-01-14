@@ -1,0 +1,13 @@
+
+> ng-protractor-full-testcycle@0.0.1 wd:stop /Users/mak/code/test/js/angularjs
+> webdriver-manager shutdown
+
+[19:55:02] I/shutdown - Attempting to shut down selenium nicely
+[19:55:02] W/shutdown - Server does not appear to be on
+
+> ng-protractor-full-testcycle@0.0.1 wd:start /Users/mak/code/test/js/angularjs
+> webdriver-manager start --logging=webdriver.log &
+
+[19:55:02] I/start - java -Djava.util.logging.config.file=/Users/mak/code/test/js/angularjs/node_modules/protractor/node_modules/webdriver-manager/webdriver.log -Dwebdriver.chrome.driver=/Users/mak/code/test/js/angularjs/node_modules/protractor/node_modules/webdriver-manager/selenium/chromedriver_2.26 -Dwebdriver.gecko.driver=/Users/mak/code/test/js/angularjs/node_modules/protractor/node_modules/webdriver-manager/selenium/geckodriver-v0.12.0 -jar /Users/mak/code/test/js/angularjs/node_modules/protractor/node_modules/webdriver-manager/selenium/selenium-server-standalone-2.53.1.jar -port 4444
+[19:55:02] I/start - seleniumProcess.pid: 94208
+[19:55:09] I/start - Selenium Standalone has exited with code 0
