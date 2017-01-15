@@ -1,6 +1,6 @@
 {
   "name": "learn-angular-material",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "predist": "rimraf -rf ./dist",
