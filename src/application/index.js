@@ -2,12 +2,12 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import ngMaterial from 'angular-material';
 
-import Config from './config';
 import ModelsModule from './models';
 import ServicesModule from './services';
 import ComponentsModule from './components';
+import RouteConfig from './application.route.config';
 
-const application = angular.module('app', [
+export default angular.module('app', [
   uiRouter,
   ngMaterial,
   ModelsModule.name,
@@ -16,7 +16,5 @@ const application = angular.module('app', [
 ]).config([
   '$urlRouterProvider',
   '$locationProvider',
-  Config,
+  RouteConfig,
 ]);
-
-export default application;

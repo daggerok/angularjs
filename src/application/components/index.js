@@ -1,19 +1,19 @@
 import angular from 'angular';
 
-import Config from './app.component.config';
-import Component from './app.component';
 import ToolbarModule from './app-toolbar';
 import SidenavModule from './app-sidenav';
-import HomeModule from './app-home';
+import ContentModule from './app-content';
+import AppComponent from './app.component';
+import AppRouteConfig from './app.component.route.config';
 
 // root component:
 const app = angular.module('app.component', [
   ToolbarModule.name,
   SidenavModule.name,
-  HomeModule.name,
+  ContentModule.name,
 ]);
 
-app.component('app', Component);
-app.config(['$stateProvider', Config]);
+app.component('app', AppComponent);
+app.config(['$stateProvider', AppRouteConfig]);
 
 export default app;

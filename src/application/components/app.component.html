@@ -1,1 +1,13 @@
-<ui-view/>
+<div layout="row">
+  <md-sidenav md-is-locked-open="true" md-whiteframe="4dp">
+    <app-sidenav
+        onSelect="$ctrl.onSelect($event)"
+        bookmarks="$ctrl.bookmarks"></app-sidenav>
+  </md-sidenav>
+
+  <md-content flex="">
+    <app-content
+        md-component-id="right"
+        bookmarks="$ctrl.bookmarks"></app-content>
+  </md-content>
+</div>

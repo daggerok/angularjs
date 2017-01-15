@@ -5,4 +5,8 @@ import controller from './app-sidenav.component.controller';
 export default {
   template,
   controller,
+  bindings: {
+    bookmarks: '<',
+    onSelect: '&',
+  },
 };

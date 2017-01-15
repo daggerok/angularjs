@@ -1,13 +1,15 @@
 export default class SidenavController {
-  constructor(BookmarkModel) {
+  constructor($state) {
     'ngInject';
     this.$ctrl = this;
-    this.BookmarkModel = BookmarkModel;
-    this.bookmarks = [];
+    this.$state = $state;
   }
 
-  $onInit() {
-    this.BookmarkModel.getBookmarks()
-      .then(bookmarks => this.bookmarks = bookmarks || []);
+  onClick(id) {
+    this.$state.transitionTo(
+      'app.content',
+      { id },
+      { location: true }
+    );
   }
 }

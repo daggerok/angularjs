@@ -1,20 +1,25 @@
 avatarSize = 128px
 avatarZoom = 0.70
 
-md-list-item > button
-  width 100%
-  text-align left !important
+md-list-item
 
-  .avatar
-    position relative
-    width avatarSize
-    height avatarSize
-    border 1px solid #444444
-    border-radius 50%
-    display inline-block
-    overflow hidden
-    margin 0
-    vertical-align middle
-    zoom avatarZoom
-    transform translateZ(avatarZoom)
-    transform scale(avatarZoom)
+  app-sidenav-item
+    width 100%
+
+    button
+      width 100%
+      text-align left !important
+
+      .avatar
+        position relative
+        width avatarSize
+        height avatarSize
+        border 1px solid #444444
+        border-radius 50%
+        display inline-block
+        overflow hidden
+        margin 0
+        vertical-align middle
+        zoom avatarZoom
+        transform translateZ(avatarZoom)
+        transform scale(avatarZoom)

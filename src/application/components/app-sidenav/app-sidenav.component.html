@@ -1,10 +1,7 @@
-<div>
-  <md-list>
-    <md-list-item ng-repeat="bookmark in $ctrl.bookmarks">
-      <md-button>
-        <md-icon class="avatar" md-svg-src="./icons/businessman.svg"></md-icon>
-        {{ bookmark.title }}
-      </md-button>
-    </md-list-item>
-  </md-list>
-</div>
+<md-list>
+  <md-list-item ng-repeat="bookmark in $ctrl.bookmarks">
+    <app-sidenav-item
+        ng-click="$ctrl.onClick(bookmark.id)"
+        title="bookmark.title"></app-sidenav-item>
+  </md-list-item>
+</md-list>
