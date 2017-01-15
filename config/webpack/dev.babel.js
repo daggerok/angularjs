@@ -21,6 +21,6 @@ export default {
     },
     proxy: {
       '/api': proxy(),
-    }
-  }
+    },
+  },
 };
