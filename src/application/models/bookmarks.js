@@ -13,6 +13,19 @@ export default class BookmarkModel {
     );
   }
 
+  distinct(categories, byName) {
+    const result = [];
+    categories.forEach(category => {
+      const isNew = result.filter(
+          curr => curr[byName] === category[byName])
+          .length === 0;
+      if (isNew) {
+        result.push(category);
+      }
+    });
+    return result;
+  }
+
   static uri() {
     return './api/bookmarks';
   }

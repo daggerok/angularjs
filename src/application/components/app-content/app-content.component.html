@@ -1,4 +1,9 @@
-<div class="app-content">
-  {{ $ctrl.bookmarks }}
-  {{ $ctrl.state }}
-</div>
+<md-content ng-cloak class="app-content">
+  <md-list>
+    <md-list-item
+        class="md-4-line"
+        ng-repeat="bookmark in $ctrl.bookmarks | filter: $ctrl.$stateParams.id">
+      <app-content-item bookmark="bookmark"></app-content-item>
+    </md-list-item>
+  </md-list>
+</md-content>

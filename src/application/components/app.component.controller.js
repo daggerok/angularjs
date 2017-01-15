@@ -1,17 +1,19 @@
 export default class AppController {
-  constructor($log, BookmarkModel) {
+  constructor(BookmarkModel) {
     'ngInject';
     this.$ctrl = this;
-    this.$log = $log;
     this.BookmarkModel = BookmarkModel;
   }
 
   $onInit() {
     this.BookmarkModel.getBookmarks()
-      .then(bookmarks => this.bookmarks = (bookmarks || []));
-  }
-
-  onSelect(payload) {
-    this.current = payload;
+      .then(bs => this.bookmarks = (bs || []))
+      .then(bs => bs.map(bookmark => bookmark.category))
+      .then(cs => this.categories = this.BookmarkModel.distinct(cs, 'name'));
+    /*
+    this.CategoryModel.getCategories()
+      .then(categories => this.categories = (categories || []));
+      // .then(this.$log.info);
+    */
   }
 }

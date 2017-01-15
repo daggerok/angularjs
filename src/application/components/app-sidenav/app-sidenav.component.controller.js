@@ -1,14 +1,15 @@
 export default class SidenavController {
-  constructor($state) {
+  constructor($state, $log) {
     'ngInject';
     this.$ctrl = this;
+    this.$log = $log;
     this.$state = $state;
   }
 
-  onClick(id) {
+  onSelect($event) {
     this.$state.transitionTo(
       'app.content',
-      { id },
+      { id: $event.name || '' },
       { location: true }
     );
   }

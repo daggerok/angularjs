@@ -5,4 +5,5 @@ import controller from './app-toolbar.component.controller';
 export default {
   template,
   controller,
+  bindings: { title: '<' },
 };

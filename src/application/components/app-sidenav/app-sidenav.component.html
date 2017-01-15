@@ -1,7 +1,6 @@
 <md-list>
-  <md-list-item ng-repeat="bookmark in $ctrl.bookmarks">
+  <md-list-item ng-repeat="category in $ctrl.categories">
     <app-sidenav-item
-        ng-click="$ctrl.onClick(bookmark.id)"
-        title="bookmark.title"></app-sidenav-item>
+        name="category.name"></app-sidenav-item>
   </md-list-item>
 </md-list>

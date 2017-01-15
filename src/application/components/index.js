@@ -6,7 +6,6 @@ import ContentModule from './app-content';
 import AppComponent from './app.component';
 import AppRouteConfig from './app.component.route.config';
 
-// root component:
 const app = angular.module('app.component', [
   ToolbarModule.name,
   SidenavModule.name,

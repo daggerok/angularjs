@@ -1,8 +1,10 @@
 <div layout="row">
-  <md-sidenav md-is-locked-open="true" md-whiteframe="4dp">
+  <md-sidenav
+      md-is-locked-open="true"
+      md-whiteframe="4dp">
+
     <app-sidenav
-        onSelect="$ctrl.onSelect($event)"
-        bookmarks="$ctrl.bookmarks"></app-sidenav>
+        categories="$ctrl.categories"></app-sidenav>
   </md-sidenav>
 
   <md-content flex="">

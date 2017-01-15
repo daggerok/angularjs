@@ -1,19 +1,28 @@
 import faker from 'faker';
 
 const size = 15;
-const seq = Array(size).fill();
+const seq = Array(size / 3).fill();
 
 const categories = seq.map((_, id) => ({
   id,
   name: faker.name.title(),
 }));
 
-const bookmarks = categories.map((c) => ({
-  id: c.id,
-  title: faker.name.findName(),
-  url: faker.internet.url(),
-  category: c.name
-}));
+console.log('categories', categories);
+
+let bookmarks = [];
+
+categories.forEach(c => {
+  const portion = seq.map((_, id) => ({
+    category: c,
+    id: `${c.id}${id}`,
+    url: faker.internet.url(),
+    title: faker.name.findName(),
+  }));
+  bookmarks = [...bookmarks, ...portion];
+});
+
+// console.log('bookmarks', bookmarks);
 
 export default () => ({
   'categories': {

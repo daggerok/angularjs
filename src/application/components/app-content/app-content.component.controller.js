@@ -10,7 +10,7 @@ export default class ContentController {
 
   $onChanges(chObj) {
     if (chObj) {
-      this.$log.info(chObj,this.bookmarks);
+      // this.$log.info(chObj,this.bookmarks);
     }
   }
 }
