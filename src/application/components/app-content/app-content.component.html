@@ -2,7 +2,7 @@
   <md-list>
     <md-list-item
         class="md-4-line"
-        ng-repeat="bookmark in $ctrl.bookmarks | filter: $ctrl.$stateParams.id">
+        ng-repeat="bookmark in $ctrl.bookmarks | filter: $ctrl.$stateParams.id ">
       <app-content-item bookmark="bookmark"></app-content-item>
     </md-list-item>
   </md-list>
