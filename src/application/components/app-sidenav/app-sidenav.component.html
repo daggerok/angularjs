@@ -1,9 +1,9 @@
 <div>
   <md-list>
-    <md-list-item>
+    <md-list-item ng-repeat="bookmark in $ctrl.bookmarks">
       <md-button>
-        <md-icon md-svg-src="./icons/businessman.svg"></md-icon>
-        {{ $ctrl.content }}
+        <md-icon class="avatar" md-svg-src="./icons/businessman.svg"></md-icon>
+        {{ bookmark.title }}
       </md-button>
     </md-list-item>
   </md-list>

@@ -1,9 +1,13 @@
 export default class SidenavController {
-  constructor() {
+  constructor(BookmarkModel) {
+    'ngInject';
     this.$ctrl = this;
+    this.BookmarkModel = BookmarkModel;
+    this.bookmarks = [];
   }
 
   $onInit() {
-    this.content = 'app sidenav';
+    this.BookmarkModel.getBookmarks()
+      .then(bookmarks => this.bookmarks = bookmarks || []);
   }
 }

@@ -1,5 +1,6 @@
 export default class HateoasService {
   constructor() {
+    'ngInject';
     this.embed = (resp) => resp.data._embedded || {};
   }
 

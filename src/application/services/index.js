@@ -1,6 +1,7 @@
 import angular from 'angular';
+
 import HateoasService from './hateoas';
 
 export default angular
-  .module('bm.services', [])
+  .module('app.services', [])
   .service('HateoasService', HateoasService);
