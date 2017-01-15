@@ -1,0 +1,232 @@
+{
+  "_embedded": {
+    "bookmarks": [
+      {
+        "category": {
+          "id": 0,
+          "name": "Dynamic Web Liason"
+        },
+        "id": "00",
+        "url": "https://tina.info",
+        "title": "Rigoberto Yost"
+      },
+      {
+        "category": {
+          "id": 0,
+          "name": "Dynamic Web Liason"
+        },
+        "id": "01",
+        "url": "http://cleora.name",
+        "title": "Ms. Hillary Douglas"
+      },
+      {
+        "category": {
+          "id": 0,
+          "name": "Dynamic Web Liason"
+        },
+        "id": "02",
+        "url": "http://eli.info",
+        "title": "Gerda McKenzie"
+      },
+      {
+        "category": {
+          "id": 0,
+          "name": "Dynamic Web Liason"
+        },
+        "id": "03",
+        "url": "https://eleazar.com",
+        "title": "Margarett Kihn"
+      },
+      {
+        "category": {
+          "id": 0,
+          "name": "Dynamic Web Liason"
+        },
+        "id": "04",
+        "url": "http://morris.info",
+        "title": "Forrest Abshire"
+      },
+      {
+        "category": {
+          "id": 1,
+          "name": "Chief Intranet Assistant"
+        },
+        "id": "10",
+        "url": "https://richard.name",
+        "title": "Nelda Zboncak"
+      },
+      {
+        "category": {
+          "id": 1,
+          "name": "Chief Intranet Assistant"
+        },
+        "id": "11",
+        "url": "http://london.biz",
+        "title": "Ansley Zieme Sr."
+      },
+      {
+        "category": {
+          "id": 1,
+          "name": "Chief Intranet Assistant"
+        },
+        "id": "12",
+        "url": "http://cecile.net",
+        "title": "Matilde Ortiz"
+      },
+      {
+        "category": {
+          "id": 1,
+          "name": "Chief Intranet Assistant"
+        },
+        "id": "13",
+        "url": "http://vinnie.biz",
+        "title": "Melody Green"
+      },
+      {
+        "category": {
+          "id": 1,
+          "name": "Chief Intranet Assistant"
+        },
+        "id": "14",
+        "url": "http://arlie.biz",
+        "title": "Hunter Zboncak"
+      },
+      {
+        "category": {
+          "id": 2,
+          "name": "Investor Markets Orchestrator"
+        },
+        "id": "20",
+        "url": "http://lee.name",
+        "title": "Colten McClure"
+      },
+      {
+        "category": {
+          "id": 2,
+          "name": "Investor Markets Orchestrator"
+        },
+        "id": "21",
+        "url": "http://corbin.biz",
+        "title": "Denis Wilkinson"
+      },
+      {
+        "category": {
+          "id": 2,
+          "name": "Investor Markets Orchestrator"
+        },
+        "id": "22",
+        "url": "https://hubert.biz",
+        "title": "Myah Powlowski"
+      },
+      {
+        "category": {
+          "id": 2,
+          "name": "Investor Markets Orchestrator"
+        },
+        "id": "23",
+        "url": "https://zackery.name",
+        "title": "Aurore Braun II"
+      },
+      {
+        "category": {
+          "id": 2,
+          "name": "Investor Markets Orchestrator"
+        },
+        "id": "24",
+        "url": "http://birdie.name",
+        "title": "Allie Nolan"
+      },
+      {
+        "category": {
+          "id": 3,
+          "name": "Customer Configuration Developer"
+        },
+        "id": "30",
+        "url": "https://lavinia.net",
+        "title": "Gayle Hoeger"
+      },
+      {
+        "category": {
+          "id": 3,
+          "name": "Customer Configuration Developer"
+        },
+        "id": "31",
+        "url": "https://jannie.com",
+        "title": "Natalie Conn"
+      },
+      {
+        "category": {
+          "id": 3,
+          "name": "Customer Configuration Developer"
+        },
+        "id": "32",
+        "url": "https://eino.info",
+        "title": "Golden Anderson"
+      },
+      {
+        "category": {
+          "id": 3,
+          "name": "Customer Configuration Developer"
+        },
+        "id": "33",
+        "url": "http://bernard.name",
+        "title": "Jovanny Schaefer"
+      },
+      {
+        "category": {
+          "id": 3,
+          "name": "Customer Configuration Developer"
+        },
+        "id": "34",
+        "url": "http://alejandra.net",
+        "title": "Osbaldo Kuhlman"
+      },
+      {
+        "category": {
+          "id": 4,
+          "name": "Investor Metrics Specialist"
+        },
+        "id": "40",
+        "url": "http://jayson.biz",
+        "title": "Chesley Heathcote"
+      },
+      {
+        "category": {
+          "id": 4,
+          "name": "Investor Metrics Specialist"
+        },
+        "id": "41",
+        "url": "https://bethel.name",
+        "title": "Shaniya Dooley"
+      },
+      {
+        "category": {
+          "id": 4,
+          "name": "Investor Metrics Specialist"
+        },
+        "id": "42",
+        "url": "http://jalyn.net",
+        "title": "Dax Cormier"
+      },
+      {
+        "category": {
+          "id": 4,
+          "name": "Investor Metrics Specialist"
+        },
+        "id": "43",
+        "url": "http://zoe.biz",
+        "title": "Tanya Huels"
+      },
+      {
+        "category": {
+          "id": 4,
+          "name": "Investor Metrics Specialist"
+        },
+        "id": "44",
+        "url": "https://clementine.com",
+        "title": "Cole Tromp"
+      }
+    ],
+    "_links": []
+  }
+}
