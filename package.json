@@ -7,11 +7,15 @@
     "prebuild": "npm run clean",
     "clean": "rimraf -rf ./dist",
     "serve": "npm-run-all build lite-server",
+    "serve-gh": "npm-run-all gh-pages bs-server",
     "lite-server": "lite-server -c ./config/lite-server.js",
+    "bs-server": "browser-sync -c ./config/bs-config.js start",
     "build": "cross-env NODE_ENV=production npm run webpack -- -p",
     "gh-pages": "cross-env NODE_ENV=ghpages npm run webpack -- -p",
-    "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
     "start": "concurrently --kill-others 'npm run webpack-dev-server'",
+    "lint": "ceslint -c ./config/.eslintrc.js 'config/**/*.js' 'src/**/*.js'",
+    "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
+    "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src"
   },
   "dependencies": {

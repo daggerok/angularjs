@@ -4,6 +4,6 @@ export default class HateoasService {
   }
 
   test() {
-    return 'test'
+    return 'test';
   }
 }
