@@ -1,5 +1,5 @@
 {
-  "name": "angularjs-quickstart",
+  "name": "angularjs-quickstart-webpack",
   "version": "0.0.1",
   "private": true,
   "scripts": {
