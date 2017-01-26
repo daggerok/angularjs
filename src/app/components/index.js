@@ -1,13 +1,10 @@
 import angular from 'angular';
 
-import Config from './app.component.config';
 import Component from './app.component';
-import HomeModule from './home';
+import Config from './app.component.config';
 
 // root component:
-const app = angular.module('app.component', [
-  HomeModule.name
-]);
+const app = angular.module('app.components', []);
 
 app.component('app', Component);
 app.config(['$stateProvider', Config]);

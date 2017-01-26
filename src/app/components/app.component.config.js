@@ -1,6 +1,6 @@
 export default ($stateProvider) => $stateProvider.state({
   // url: '',
   name: 'app',
-  abstract: true,
+  // abstract: true,
   template: '<app></app>',
 });
