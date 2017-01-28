@@ -23,4 +23,9 @@ describe('test app', () => {
   it('AppService.test()', () => {
     expect(AppService.test()).toEqual('test');
   });
+
+  it('mocking using sinon', function () {
+    sandbox.stub(AppService, 'test').returns('mock');
+    expect(AppService.test()).toEqual('mock');
+  });
 });
