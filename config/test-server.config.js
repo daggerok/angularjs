@@ -1,7 +1,6 @@
 const historyFallback = require('connect-history-api-fallback');
 
 module.exports = {
-  logLevel: 'silent',
   watchOptions: {},
   ghostMode: false,
   online: false,
@@ -14,14 +13,16 @@ module.exports = {
   files: [
     './src/**/*.*',
   ],
+  logLevel: 'silent',
   server: {
-    baseDir: './dist/',
     middleware: {
+      0: null,
       // overrides the second middleware default with new settings
       1: historyFallback({
         index: '/index.html',
-        verbose: true,
+        verbose: false,
       }),
-    }
+    },
+    baseDir: './dist/',
   }
 };

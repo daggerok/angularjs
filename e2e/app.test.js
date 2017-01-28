@@ -20,9 +20,11 @@ describe('home page', () => {
       expect(footer.isPresent()).toEqual(true);
     });
 
-    it('footer has right text', () => {
+    it('footer has correct text', () => {
+      // everything is a promise:
       footer.getText()
-        .then(console.log);
+        .then(text => expect(text).toEqual('footer'));
+      // but jasmine can handle promises as regular string
       expect(footer.getText()).toEqual('footer');
     });
   });

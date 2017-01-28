@@ -1,4 +1,6 @@
 const Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
+let SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+const reportsPath = './dist/reports';
 
 exports.config = {
   // we don't need do `webdriver-manager start`
@@ -14,12 +16,19 @@ exports.config = {
   jasmineNodeOpts: {
     showColors: true,
     defaultTimeoutInterval: 5000,
+    // Remove protractor dot reporter
+    print: () => {},
   },
-  onPrepare: function() {
+  onPrepare: () => {
     jasmine.getEnv().addReporter(
       new Jasmine2HtmlReporter({
-        savePath: './dist/report/screenshots'
+        savePath: `${reportsPath}/protractor-jasmine2-html-reporter/screenshots`,
       })
     );
-  }
+    jasmine.getEnv().addReporter(new SpecReporter({
+      spec: {
+        displayStacktrace: true
+      }
+    }));
+  },
 };
