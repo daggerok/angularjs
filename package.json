@@ -16,7 +16,6 @@
     "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
     "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "start": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
-
     "pretest": "npm run webpack",
     "preprotractor": "webdriver-manager update",
     "test": "concurrently --kill-others -s first 'npm run protractor' 'npm run e2e-server' -p [{name}] --names 'E2E,HTTP' -c 'green,cyan'",
@@ -66,6 +65,7 @@
     "npm-run-all": "4.0.1",
     "postcss-loader": "1.2.2",
     "protractor": "5.0.0",
+    "protractor-jasmine2-html-reporter": "0.0.7",
     "raw-loader": "0.5.1",
     "resolve-url-loader": "1.6.1",
     "rimraf": "2.5.4",
