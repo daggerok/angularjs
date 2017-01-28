@@ -66,6 +66,12 @@
  toThrow()
 */
 
+// we don't need ti, as far they are globals, like descrbe/it/expect too...
+// const { browser, element, by } = require('protractor');
+
+// npm i -D protractor @types/jasmine
+// and add project scoped libs of files fore that modules dirs
+
 describe('home page', () => {
 
   beforeEach(() => {
@@ -81,7 +87,7 @@ describe('home page', () => {
     let footer;
 
     beforeEach(() => {
-      footer = browser.element(by.css('footer'))
+      footer = element(by.css('footer'))
     });
 
     it('should be presented', () => {
@@ -113,7 +119,8 @@ describe('home page', () => {
           const { width, height } = size;
 
           console.log(`width: ${width}, height: ${height}`);
-          expect(width).toEqual(925);
+          // // this is a bad assertion - not cross-* independent
+          // expect(width).toEqual(925);
           expect(height).toEqual(20);
         });
       });

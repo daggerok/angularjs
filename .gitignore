@@ -1,5 +1,8 @@
 .idea/
+!.idea/vcs.xml
+!.idea/misc.xml
 !.idea/angularjs.iml
+!.idea/libraries/*
 !.idea/jsLibraryMappings.xml
 !.idea/watcherTasks.xml
 bower_components/

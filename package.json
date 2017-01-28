@@ -15,9 +15,7 @@
     "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
     "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "start": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
-
     "lint": "eslint -c ./config/.eslintrc.js './src/**/*.js'",
-
     "pretest": "npm run webpack",
     "test": "concurrently --kill-others -s first 'npm run protractor' 'npm run test-server' -p [{name}] --names 'E2E,HTTP' -c 'green,cyan'",
     "test-server": "lite-server -c ./config/test-server.config.js",
@@ -33,6 +31,8 @@
     "jquery": "3.1.1"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.41",
+    "@types/protractor": "^4.0.0",
     "angular-mocks": "1.6.1",
     "autoprefixer": "6.7.0",
     "babel-cli": "6.22.2",
