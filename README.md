@@ -2,8 +2,8 @@
 
 ```bash
 npm i
+npm t
 npm start
-npm run dev
 npm run build
 npm run serve
 ```

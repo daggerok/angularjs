@@ -4,7 +4,7 @@ beforeEach(module('app'));
 
 describe('test app', () => {
 
-  var $window, AppService, sandbox;
+  let $window, AppService, sandbox;
 
   beforeEach(inject(function (_$window_, _AppService_) {
     $window = _$window_;

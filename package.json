@@ -13,10 +13,12 @@
     "build": "cross-env NODE_ENV=production npm run webpack -- -p",
     "gh-pages": "cross-env NODE_ENV=ghpages npm run webpack -- -p",
     "start": "concurrently --kill-others 'npm run webpack-dev-server'",
-    "lint": "ceslint -c ./config/.eslintrc.js 'config/**/*.js' 'src/**/*.js'",
+    "lint": "eslint -c ./config/.eslintrc.js 'config/**/*.js' 'src/**/*.js'",
     "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
     "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
+
+    "pretest": "npm run webpack",
     "test": "karma start ./config/karma.conf.js #--log-level=debug"
   },
   "dependencies": {
@@ -28,6 +30,7 @@
     "jquery": "3.1.1"
   },
   "devDependencies": {
+    "@types/jasmine": "2.5.41",
     "angular-mocks": "1.6.1",
     "autoprefixer": "6.7.0",
     "babel-cli": "6.22.2",
@@ -67,7 +70,7 @@
     "raw-loader": "0.5.1",
     "resolve-url-loader": "1.6.1",
     "rimraf": "2.5.4",
-    "sinon": "^1.17.7",
+    "sinon": "1.17.7",
     "source-map-loader": "0.1.6",
     "style-loader": "0.13.1",
     "stylus": "0.54.5",
