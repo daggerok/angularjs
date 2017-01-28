@@ -2,12 +2,13 @@
 
 beforeEach(module('app'));
 
-describe('sorting the list of users', () => {
+describe('test app', () => {
 
-  var sandbox;
+  var $window, AppService, sandbox;
 
   beforeEach(inject(function (_$window_) {
     $window = _$window_;
+    AppService = _AppService_;
     sandbox = sinon.sandbox.create();
   }));
 
@@ -15,7 +16,11 @@ describe('sorting the list of users', () => {
     sandbox.restore();
   });
 
-  it('sorts in descending order by default', () => {
+  it('$window.location.href', () => {
     expect($window.location.href).toEqual('http://localhost:9876/');
+  });
+
+  it('AppService.test()', () => {
+    expect(AppService.test()).toEqual('test');
   });
 });
