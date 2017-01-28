@@ -6,7 +6,7 @@ describe('test app', () => {
 
   var $window, AppService, sandbox;
 
-  beforeEach(inject(function (_$window_) {
+  beforeEach(inject(function (_$window_, _AppService_) {
     $window = _$window_;
     AppService = _AppService_;
     sandbox = sinon.sandbox.create();
