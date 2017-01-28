@@ -1,4 +1,4 @@
-export default class HateoasService {
+export default class AppService {
   constructor() {
     // todo
   }
