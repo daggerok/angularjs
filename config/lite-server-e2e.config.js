@@ -1,6 +1,7 @@
 const historyFallback = require('connect-history-api-fallback');
 
 module.exports = {
+  logLevel: 'silent',
   watchOptions: {},
   ghostMode: false,
   online: false,
