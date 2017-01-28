@@ -18,14 +18,11 @@
     "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
 
-    "e2e": "npm run test",
-    "pree2e": "npm run webpack",
-    "pretest": "webdriver-manager update",
-    "test": "concurrently --kill-others -s first 'npm run protractor' 'npm run e2e-server' 'npm run wd-start' -p [{name}] --names 'E2E,HTTP,WD' -c 'yellow,green,cyan'",
+    "pretest": "npm run webpack",
+    "preprotractor": "webdriver-manager update",
+    "test": "concurrently --kill-others -s first 'npm run protractor' 'npm run e2e-server' -p [{name}] --names 'E2E,HTTP' -c 'green,cyan'",
     "e2e-server": "lite-server -c ./config/lite-server-e2e.config.js",
-    "wd-start": "webdriver-manager start --quiet",
-    "protractor": "sleep 5 && protractor ./config/protractor.conf.js",
-    "postprotractor": "webdriver-manager shutdown"
+    "protractor": "protractor ./config/protractor.conf.js"
   },
   "dependencies": {
     "angular": "1.6.1",

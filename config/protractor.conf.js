@@ -1,6 +1,8 @@
 exports.config = {
+  // we don't need do `webdriver-manager start`
+  // seleniumAddress: 'http://localhost:4444/wd/hub',
+  directConnect: true,
   framework: 'jasmine',
-  seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: [
     '../e2e/**/*.test.js',
   ],
