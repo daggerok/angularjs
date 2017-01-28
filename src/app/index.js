@@ -9,8 +9,12 @@ const app = angular.module('app', [
 
 const Config = ($urlRouterProvider, $locationProvider) => {
   $urlRouterProvider.otherwise('/');
-  //$locationProvider.hashPrefix('!');
-  $locationProvider.html5Mode(true);
+  // $locationProvider.hashPrefix('!');
+  // $locationProvider.html5Mode(true);
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
+  });
 };
 
 app.config(['$urlRouterProvider', '$locationProvider', Config]);

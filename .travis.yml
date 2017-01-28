@@ -15,6 +15,7 @@ before_install:
   - sudo dpkg -i google-chrome*.deb
 script:
   - npm i
+  - npm t
   - npm run build
   - npm run gh-pages
   - cat *.log | true

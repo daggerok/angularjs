@@ -1,4 +1,4 @@
-# angularjs-quick-start [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=quickstart)](https://travis-ci.org/daggerok/angularjs)
+# angularjs-karma [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=karma)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i

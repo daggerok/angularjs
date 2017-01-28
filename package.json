@@ -1,5 +1,5 @@
 {
-  "name": "angularjs-quickstart",
+  "name": "angularjs-karma",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,7 +16,8 @@
     "lint": "ceslint -c ./config/.eslintrc.js 'config/**/*.js' 'src/**/*.js'",
     "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
     "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
-    "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src"
+    "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
+    "test": "karma start ./config/karma.conf.js #--log-level=debug"
   },
   "dependencies": {
     "angular": "1.6.1",
@@ -39,7 +40,7 @@
     "base-href-webpack-plugin": "1.0.0",
     "concurrently": "3.1.0",
     "connect-history-api-fallback": "1.3.0",
-    "copy-webpack-plugin": "^4.0.1",
+    "copy-webpack-plugin": "4.0.1",
     "cross-env": "3.1.4",
     "css-loader": "0.26.1",
     "cssnano": "3.10.0",
@@ -52,7 +53,11 @@
     "file-loader": "0.9.0",
     "html-webpack-plugin": "2.26.0",
     "http-proxy-middleware": "0.17.3",
+    "jasmine": "2.5.3",
     "json-loader": "0.5.4",
+    "karma": "1.4.0",
+    "karma-chrome-launcher": "2.0.0",
+    "karma-jasmine": "1.1.0",
     "lite-server": "2.2.2",
     "ng-annotate-loader": "0.2.0",
     "ng-cache-loader": "0.0.22",
