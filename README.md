@@ -1,9 +1,11 @@
-# angularjs-karma [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=karma)](https://travis-ci.org/daggerok/angularjs)
+# angularjs-protractor [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=protractor)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i
+npm run webpack
+npm t
 npm start
-npm run dev
+npm run e2e
 npm run build
 npm run serve
 ```

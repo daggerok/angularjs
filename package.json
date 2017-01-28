@@ -1,5 +1,5 @@
 {
-  "name": "angularjs-karma",
+  "name": "angularjs-protractor",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -17,7 +17,15 @@
     "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
     "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
-    "test": "karma start ./config/karma.conf.js #--log-level=debug"
+
+    "e2e": "npm run test",
+    "pree2e": "npm run webpack",
+    "pretest": "webdriver-manager update",
+    "test": "concurrently --kill-others -s first 'npm run protractor' 'npm run e2e-server' 'npm run wd-start' -p [{name}] --names 'E2E,HTTP,WD' -c 'yellow,green,cyan'",
+    "e2e-server": "lite-server -c ./config/lite-server-e2e.config.js",
+    "wd-start": "webdriver-manager start --quiet",
+    "protractor": "sleep 5 && protractor ./config/protractor.conf.js",
+    "postprotractor": "webdriver-manager shutdown"
   },
   "dependencies": {
     "angular": "1.6.1",
@@ -56,18 +64,16 @@
     "http-proxy-middleware": "0.17.3",
     "jasmine": "2.5.3",
     "json-loader": "0.5.4",
-    "karma": "1.4.0",
-    "karma-chrome-launcher": "2.0.0",
-    "karma-jasmine": "1.1.0",
     "lite-server": "2.2.2",
     "ng-annotate-loader": "0.2.0",
     "ng-cache-loader": "0.0.22",
     "npm-run-all": "4.0.1",
     "postcss-loader": "1.2.2",
+    "protractor": "5.0.0",
     "raw-loader": "0.5.1",
     "resolve-url-loader": "1.6.1",
     "rimraf": "2.5.4",
-    "sinon": "^1.17.7",
+    "sinon": "1.17.7",
     "source-map-loader": "0.1.6",
     "style-loader": "0.13.1",
     "stylus": "0.54.5",
