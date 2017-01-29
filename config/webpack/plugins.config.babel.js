@@ -10,8 +10,12 @@ import { BaseHrefWebpackPlugin } from 'base-href-webpack-plugin';
 import { isProdOrGhpages } from './project.config.babel';
 import htmlConfig from './plugins/html-webpack-plugin.config.babel';
 // import copyWebpackPlugin from './plugins/copy-webpack-plugin.babel';
+import uglifyJsPluginConfig from './plugins/uglify-js-plugin.config';
 
-const { OccurenceOrderPlugin } = optimize;
+const {
+  OccurenceOrderPlugin,
+  UglifyJsPlugin,
+} = optimize;
 
 export default (extractCSS, vendors, suffix, baseHref) => [
   extractCSS,
@@ -34,4 +38,5 @@ export default (extractCSS, vendors, suffix, baseHref) => [
       'NODE_ENV': JSON.stringify(isProdOrGhpages ? 'production' : 'development'),
     },
   }),
+  isProdOrGhpages ? new UglifyJsPlugin(uglifyJsPluginConfig) : undefined,
 ].filter(p => !!p);
