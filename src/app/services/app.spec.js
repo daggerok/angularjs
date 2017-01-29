@@ -6,13 +6,13 @@ describe('test app', () => {
 
   let $window, AppService, sandbox;
 
-  beforeEach(inject(function (_$window_, _AppService_) {
+  beforeEach(inject((_$window_, _AppService_) => {
     $window = _$window_;
     AppService = _AppService_;
     sandbox = sinon.sandbox.create();
   }));
 
-  afterEach(function () {
+  afterEach(() => {
     sandbox.restore();
   });
 
@@ -24,7 +24,7 @@ describe('test app', () => {
     expect(AppService.test()).toEqual('test');
   });
 
-  it('mocking using sinon', function () {
+  it('mocking using sinon', () => {
     sandbox.stub(AppService, 'test').returns('mock');
     expect(AppService.test()).toEqual('mock');
   });

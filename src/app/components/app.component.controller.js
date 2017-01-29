@@ -1,4 +1,4 @@
-export default class HomeController {
+export default class AppController {
   constructor() {
     this.$ctrl = this;
   }
