@@ -19,7 +19,7 @@ module.exports = function(config) {
       './dist/app.js',
       './node_modules/angular-mocks/angular-mocks.js',
       './node_modules/sinon/pkg/sinon.js',
-      './src/**/*.spec.js'
+      './src/**/*.spec.js',
     ],
 
 
@@ -68,6 +68,6 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
-  })
+    concurrency: Infinity,
+  });
 };
