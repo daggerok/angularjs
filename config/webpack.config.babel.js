@@ -1,24 +1,22 @@
 import entry from './webpack/entry.config.babel';
 import output from './webpack/output.config.babel';
+import module from './webpack/module.config.babel';
 import resolve from './webpack/resolve.config.babel';
 import plugins from './webpack/plugins.config.babel';
-import module from './webpack/module.config.babel';
-import postcss from './webpack/postcss.config.babel';
-import eslint from './webpack/eslint.config.babel';
 import node from './webpack/node.config.babel';
-import devServer from './webpack/webpacl-dev-server.babel';
-import { isProdOrGhpages } from './webpack/project.config.babel';
+import watchOptions from './webpack/watch-options.config.babel';
+import devServer from './webpack/webpack-dev-server.config.babel';
 
-export default {
+export default env => ({
   entry,
-  output,
-  module,
-  plugins,
+  output: output(env),
+  module: module(env),
   resolve,
-  postcss,
-  devServer,
-  profile: 'web',
-  devtool: isProdOrGhpages ? false : '#source-map',
-  eslint,
+  plugins: plugins(env),
   node,
-};
+  watchOptions: watchOptions,
+  profile: 'web',
+  devtool: env === 'development' ? 'eval' : 'source-map',
+  devServer: devServer(env),
+  bail: true,
+});

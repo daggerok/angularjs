@@ -1,13 +1,16 @@
-import { isProdOrGhpages } from '../project.config.babel';
-
-export default {
+export default env => ({
+  // chunksSortMode: 'none',
+  chunks: [
+    'vendors',
+    'app',
+  ],
   filename: 'index.html',
-  template: './src/assets/index.html',
   favicon: './src/assets/favicon.ico',
-  minify: isProdOrGhpages ? {
+  template: './src/assets/index.html',
+  minify: env !== 'development' ? {
     collapseWhitespace: true,
     removeComments: true,
     minifyCSS: true,
     minifyJS: true,
   } : false,
-};
+});
