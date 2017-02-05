@@ -19,5 +19,7 @@ script:
   - npm run lint
   - npm run build
   - npm run gh-pages
+after_script:
   - cat *.log | true
+  - npm outdated
 cache.directories: node_modules/
