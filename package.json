@@ -4,28 +4,31 @@
   "private": true,
   "scripts": {
     "sleep": "sleep 1",
-    "prebuild": "npm run clean",
-    "clean": "rimraf -rf ./dist",
+    "prewebpack": "rimraf -rf ./dist",
+
     "serve": "npm-run-all build lite-server",
-    "serve-gh": "npm-run-all gh-pages bs-server",
-    "lite-server": "lite-server -c ./config/lite-server.js",
-    "bs-server": "browser-sync -c ./config/bs-config.js start",
     "build": "cross-env NODE_ENV=production npm run webpack",
-    "gh-pages": "cross-env NODE_ENV=ghpages npm run webpack",
+    "lite-server": "lite-server -c ./config/lite-server.js",
+
+    "ghserve": "npm-run-all ghpages browser-sync",
+    "ghpages": "cross-env NODE_ENV=ghpages npm run webpack",
+    "browser-sync": "browser-sync -c ./config/bs-config.js start",
+
     "start": "concurrently --kill-others 'npm run webpack-dev-server'",
-    "lint": "eslint -c ./config/.eslintrc.js --ignore-pattern '**/*.spec.js' 'config/**/*.js' 'src/**/*.js'",
     "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
-    "prebs-server": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
+    "prebrowser-sync": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
+
+    "lint": "eslint -c ./config/.eslintrc.js --ignore-pattern '**/*.spec.js' 'config/**/*.js' 'src/**/*.js'",
 
     "pretest": "npm run webpack",
     "test": "karma start ./config/karma.conf.js #--log-level=debug"
   },
   "dependencies": {
     "angular": "1.6.1",
+    "angular-ui-router": "0.4.2",
     "angular-animate": "1.6.1",
     "angular-aria": "1.6.1",
-    "angular-ui-router": "0.4.2",
     "bootstrap": "3.3.7",
     "jquery": "3.1.1"
   },
@@ -37,7 +40,7 @@
     "babel-eslint": "7.1.1",
     "babel-loader": "6.2.10",
     "babel-plugin-add-module-exports": "0.2.1",
-    "babel-plugin-transform-class-properties": "6.22.0",
+    "babel-plugin-syntax-dynamic-import": "6.18.0",
     "babel-preset-es2015": "6.22.0",
     "babel-preset-stage-0": "6.22.0",
     "babel-register": "6.22.0",
@@ -86,7 +89,7 @@
     ],
     "plugins": [
       "add-module-exports",
-      "transform-class-properties"
+      "syntax-dynamic-import"
     ]
   },
   "keywords": [

@@ -4,6 +4,9 @@
 npm i
 npm t
 npm start
+npm run lint
 npm run build
 npm run serve
+npm run ghpages
+npm run ghserve
 ```
