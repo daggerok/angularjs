@@ -2,6 +2,7 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
+  - 5
   - 6
   - 7
 install: true
@@ -13,9 +14,15 @@ before_install:
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
-script:
+before_script:
   - npm i
+  - npm update
+script:
+  - npm t
+  - npm run lint
   - npm run build
-  - npm run gh-pages
+  - npm run ghpages
+after_script:
   - cat *.log | true
+  - npm outdated
 cache.directories: node_modules/

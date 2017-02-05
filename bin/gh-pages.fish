@@ -10,7 +10,7 @@
 # git commit -am init
 # git push origin gh-pages
 
-npm i; npm run gh-pages
+npm i; npm run ghpages
 #sed -i -e "s/\(<base href=\"\/\">\)/<base href=\"\/angularjs\/\"\/>/g" dist/index.html
 sed -i -e 's/^dist\/$/#dist\//g' .gitignore
 touch dist/.nojekyll

@@ -10,3 +10,5 @@ base.setAttribute('href', '/');
 angular
   .element(heads)
   .append(base);
+
+export default base;

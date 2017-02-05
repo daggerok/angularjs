@@ -3,7 +3,9 @@
 ```bash
 npm i
 npm start
-npm run dev
+npm run lint
 npm run build
 npm run serve
+npm run ghpages
+npm run ghserve
 ```

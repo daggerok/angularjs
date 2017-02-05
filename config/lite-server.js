@@ -6,7 +6,7 @@ module.exports = {
     './src/**/*.*',
   ],
   server: {
-    baseDir: "./dist/",
+    baseDir: './dist/',
     middleware: {
       // overrides the second middleware default with new settings
       1: historyFallback({
