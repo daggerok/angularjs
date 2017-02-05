@@ -17,9 +17,21 @@ const Config = ($urlRouterProvider, $locationProvider) => {
   // $locationProvider.html5Mode(true);
   $locationProvider.html5Mode({
     enabled: true,
-    requireBase: false
+    // requireBase: false
   });
 };
+
+// karma require base
+if (process && process.env && process.env.DEVELOPMENT) {
+  // <base href="/">
+  const heads = document.getElementsByTagName('head');
+  const base = document.createElement('base');
+
+  base.setAttribute('href', '/');
+  angular
+    .element(heads)
+    .append(base);
+}
 
 app.config(['$urlRouterProvider', '$locationProvider', Config]);
 
