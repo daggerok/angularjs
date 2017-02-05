@@ -1,11 +1,9 @@
-import { isProdOrGhpages } from './project.config.babel';
+export default env => ({
+  emitError: env != 'development',
+  failOnError: env != 'development',
 
-export default {
-  emitError: isProdOrGhpages,
-  failOnError: isProdOrGhpages,
-
-  emitWarning: isProdOrGhpages,
-  failOnWarning: isProdOrGhpages,
+  emitWarning: env != 'development',
+  failOnWarning: env != 'development',
 
   configFile: './config/.eslintrc.js',
   // several examples !
@@ -30,4 +28,4 @@ export default {
     filePath: './dist/checkstyle.xml',
     formatter: require('eslint/lib/formatters/checkstyle')
   }
-};
+});

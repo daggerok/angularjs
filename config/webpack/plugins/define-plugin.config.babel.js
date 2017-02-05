@@ -1,8 +1,8 @@
-import { isProdOrGhpages } from '../project.config.babel';
+import { jsonEnv } from '../utils.babel';
 
-export default {
+export default env => ({
   'process.env': {
-    'DEVELOPMENT': !isProdOrGhpages,
-    'NODE_ENV': JSON.stringify(isProdOrGhpages ? 'production' : 'development'),
+    NODE_ENV: jsonEnv(env),
+    DEVELOPMENT: env === 'development',
   },
-};
+});

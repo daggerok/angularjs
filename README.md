@@ -1,4 +1,4 @@
-# angularjs-karma [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=karma)](https://travis-ci.org/daggerok/angularjs)
+# angularjs-karma-webpack2 [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=karma-webpack2)](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i

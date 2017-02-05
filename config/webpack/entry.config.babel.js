@@ -1,4 +1,6 @@
 export default {
-  vendors: './src/vendors.js',
-  app: './src/main.js',
+  app: [
+    './src/vendors.js',
+    './src/main.js',
+  ],
 };
