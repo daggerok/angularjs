@@ -1,7 +1,6 @@
 import project from '../../package.json';
 
-export default project;
-
+export const version = project.version;
 export const profile = ((process || {}).env || {}).NODE_ENV || '';
 export const isProd = 'production' === profile;
 export const isGhpages = 'ghpages' === profile;

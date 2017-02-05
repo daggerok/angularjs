@@ -1,5 +1,7 @@
 import path from 'path';
+import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin';
 
+import { suffix } from './output.config.babel';
 import { isProdOrGhpages } from './project.config.babel';
 
 const resolve = (rel) => path.resolve(process.cwd(), rel);
@@ -9,7 +11,9 @@ const include = resolve('./src');
 const exclude = /\/node_modules\//;
 const assets = /\.(raw|gif|png|jpg|jpeg|otf|eot|woff|woff2|ttf|svg|ico)$/;
 
-export default (extractCSS) => ({
+export const extractCSS = new ExtractTextWebpackPlugin(`[name].css?${suffix}`, { allChunks: true });
+
+export default {
 
   preLoaders: [
     {
@@ -93,4 +97,4 @@ export default (extractCSS) => ({
       test: assets,
     },
   ]
-});
+};

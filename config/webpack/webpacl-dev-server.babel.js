@@ -1,9 +1,12 @@
+import { isProdOrGhpages } from './project.config.babel';
+import { publicPath } from './output.config.babel';
+
 const proxy = () => ({
   target: 'http://localhost:8080',
   secure: false,
 });
 
-export default (publicPath) => ({
+export default isProdOrGhpages ? false : {
   port: 8000,
   inline: true,
   progress: true,
@@ -14,4 +17,4 @@ export default (publicPath) => ({
   proxy: {
     '/api': proxy(),
   },
-});
+};
