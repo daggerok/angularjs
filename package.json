@@ -1,44 +1,35 @@
 {
-  "name": "angularjs-quick-start",
+  "name": "angularjs-webpack-quickstart",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "json-server:watch": "npm run webpack -- -w",
-    "json-server:serve": "npm-run-all build json-server",
-    "json-server:dev": "npm-run-all -p json-server:watch json-server",
-    "json-server": "babel-node ./node_modules/.bin/json-server --watch -c ./config/json-server/config.json -r ./config/json-server/routes.json ./config/json-server/testdata.babel.js",
-
-    "sleep": "sleep 1",
     "prewebpack": "rimraf -rf ./dist",
+    "webpack": "webpack --config=./config/webpack.config.js",
+
+    "start": "concurrently --kill-others 'npm run webpack-dev-server'",
+    "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.js --env development --content-base=./src",
 
     "serve": "npm-run-all build lite-server",
-    "build": "cross-env NODE_ENV=production npm run webpack",
+    "build": "npm run webpack -- --env production",
     "lite-server": "lite-server -c ./config/lite-server.js",
 
     "ghserve": "npm-run-all ghpages browser-sync",
-    "ghpages": "cross-env NODE_ENV=ghpages npm run webpack",
-    "browser-sync": "browser-sync -c ./config/bs-config.js start",
-
-    "start": "concurrently --kill-others 'npm run webpack-dev-server'",
-    "webpack": "webpack --config=./config/webpack.config.babel.js -c --process",
+    "ghpages": "npm run webpack -- --env ghpages",
+    "browser-sync": "browser-sync -c ./config/browser-sync.js start",
     "prebrowser-sync": "mv -f dist angularjs; mkdir -p dist; mv -f angularjs dist/",
-    "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --content-base=./src",
 
-    "lint": "eslint -c ./config/.eslintrc.js --ignore-pattern '**/*.spec.js' 'config/**/*.js' 'src/**/*.js'",
+    "lint": "eslint -c ./config/.eslintrc.js --ignore-pattern '**/*.test.js' 'config/**/*.js' 'src/**/*.js'",
 
-    "pretest": "npm run webpack",
+    "pretest": "npm run webpack -- --env development",
     "test": "karma start ./config/karma.conf.js #--log-level=debug"
   },
   "dependencies": {
     "angular": "1.6.1",
     "angular-ui-router": "0.4.2",
-    "angular-animate": "1.6.1",
-    "angular-aria": "1.6.1",
-    "bootstrap": "3.3.7",
+    "bootswatch": "3.3.7",
     "jquery": "3.1.1"
   },
   "devDependencies": {
-    "@types/jasmine": "2.5.41",
     "angular-mocks": "1.6.1",
     "autoprefixer": "6.7.2",
     "babel-cli": "6.22.2",
@@ -50,60 +41,57 @@
     "babel-preset-stage-0": "6.22.0",
     "babel-register": "6.22.0",
     "base-href-webpack-plugin": "1.0.2",
+    "chai": "^3.5.0",
+    "compression-webpack-plugin": "^0.3.2",
     "concurrently": "3.1.0",
     "connect-history-api-fallback": "1.3.0",
     "copy-webpack-plugin": "4.0.1",
-    "cross-env": "3.1.4",
     "css-loader": "0.26.1",
     "cssnano": "3.10.0",
     "eslint": "3.15.0",
     "eslint-friendly-formatter": "2.0.7",
     "eslint-loader": "1.6.1",
     "eslint-plugin-babel": "4.0.1",
-    "extract-text-webpack-plugin": "1.0.1",
-    "faker": "3.1.0",
+    "extract-text-webpack-plugin": "2.0.0-rc.3",
     "file-loader": "0.10.0",
     "html-webpack-plugin": "2.28.0",
     "http-proxy-middleware": "0.17.3",
-    "jasmine": "2.5.3",
-    "json-loader": "0.5.4",
-    "karma": "1.4.1",
-    "karma-chrome-launcher": "2.0.0",
-    "karma-jasmine": "1.1.0",
+    "karma": "^1.4.1",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^2.0.2",
+    "less": "^2.7.2",
+    "less-loader": "^2.2.3",
     "lite-server": "2.2.2",
+    "mocha": "^3.2.0",
     "ng-annotate-loader": "0.2.0",
     "ng-cache-loader": "0.0.22",
+    "node-sass": "^4.5.0",
     "npm-run-all": "4.0.1",
     "postcss-loader": "1.2.2",
+    "precss": "^1.4.0",
     "raw-loader": "0.5.1",
     "resolve-url-loader": "1.6.1",
     "rimraf": "2.5.4",
-    "sinon": "1.17.7",
+    "rucksack-css": "^0.9.1",
+    "sass-loader": "^4.1.1",
+    "script-ext-html-webpack-plugin": "1.6.2",
     "source-map-loader": "0.1.6",
     "style-loader": "0.13.1",
     "stylus": "0.54.5",
     "stylus-loader": "2.4.0",
     "url-loader": "0.5.7",
-    "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
-  },
-  "babel": {
-    "presets": [
-      "stage-0",
-      "es2015"
-    ],
-    "plugins": [
-      "add-module-exports",
-      "syntax-dynamic-import"
-    ]
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.3.0"
   },
   "keywords": [
     "angularjs",
-    "webpack"
+    "webpack 2"
   ],
-  "main": "index.js",
+  "main": "src/main.js",
   "author": "daggerok",
-  "description": "angularjs quickstart",
+  "description": "angularjs webpack quickstart",
   "license": "ISC",
   "repository": {
     "type": "git",

@@ -2,7 +2,6 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-  - 5
   - 6
   - 7
 install: true
@@ -22,6 +21,7 @@ script:
   - npm run lint
   - npm run build
   - npm run ghpages
+  - npm run webpack
 after_script:
   - cat *.log | true
   - npm outdated

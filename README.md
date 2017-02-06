@@ -1,11 +1,10 @@
-# angularjs [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=master)](https://travis-ci.org/daggerok/angularjs)
+# angularjs-webpack [![build](https://travis-ci.org/daggerok/angularjs.svg?branch=webpack])](https://travis-ci.org/daggerok/angularjs)
 
 ```bash
 npm i
-npm start
+npm t
 npm run lint
 npm run build
 npm run serve
-npm run ghpages
-npm run ghserve
+fish bin/gh-pages.fish
 ```
