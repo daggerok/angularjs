@@ -33,7 +33,7 @@ module.exports = {
       localhost8080proxyApi,
       // historyApiFallback
       historyApiFallback({
-        index: '/react/'
+        index: '/angularjs/'
       })
     ],
   },
@@ -43,7 +43,7 @@ module.exports = {
     './dist/**/*.*'
   ],
 
-  startPath: "/react/",
+  startPath: "/angularjs/",
 
   serveStatic: [
     "./dist"

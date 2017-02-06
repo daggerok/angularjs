@@ -29,6 +29,7 @@ export default (extractCSS) => ({
         ],
         plugins: [
           'add-module-exports',
+          'syntax-dynamic-import',
         ]
       }
     },
