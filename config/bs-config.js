@@ -12,39 +12,31 @@
 
 // all requests to /api/** => will redirect on http://localhost:8080/api/**
 const httpProxyMiddleware = require('http-proxy-middleware');
-const localhost8080proxyApi = httpProxyMiddleware('/api', {
+const proxy = httpProxyMiddleware('/api', {
   target: 'http://localhost:8080',
   changeOrigin: true, // for vhosted sites, changes host header to match to target's host
   logLevel: 'debug'
 });
 
 // fallback for react-routes
-const historyApiFallback = require('connect-history-api-fallback');
+const connectHistoryApiFallback = require('connect-history-api-fallback');
 
 module.exports = {
   server: {
     always: 'index.html',
-
     baseDir: './dist',
-
-    // see ./webpack/devServer.babel.js
     middleware: [
-      // proxy
-      localhost8080proxyApi,
-      // historyApiFallback
-      historyApiFallback({
+      proxy,
+      connectHistoryApiFallback({
         index: '/angularjs/'
       })
     ],
   },
-
   files: [
     './index.html',
     './dist/**/*.*'
   ],
-
-  startPath: '/react/',
-
+  startPath: '/angularjs/',
   serveStatic: [
     './dist'
   ],
