@@ -1,22 +1,17 @@
 {
   "name": "learn-angular-material",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "private": true,
   "scripts": {
     "precompile": "rimraf -rf ./dist",
     "compile": "webpack --config=./config/webpack.config.babel.js",
-
     "serve": "npm-run-all build json-server",
     "build": "npm run compile -- --env production",
     "json-server": "babel-node ./node_modules/.bin/json-server --watch -c ./config/json-server/config.json -r ./config/json-server/routes.json ./config/json-server/testdata.babel.js",
-
     "gh-pages": "npm run compile -- --env ghpages",
-
     "dev": "npm-run-all -p watch json-server",
     "watch": "npm run compile -- -w --env development",
-
     "lint": "eslint -c ./config/.eslintrc.js './config/**/*.js' './src/**/*.js'",
-
     "start": "npm-run-all -p webpack-dev-server json-server",
     "webpack-dev-server": "webpack-dev-server -w -d --config=./config/webpack.config.babel.js --env development"
   },
