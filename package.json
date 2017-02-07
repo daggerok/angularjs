@@ -1,5 +1,5 @@
 {
-  "name": "angularjs-quick-start",
+  "name": "angularjs-webpack1",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -85,7 +85,7 @@
     "stylus-loader": "2.4.0",
     "url-loader": "0.5.7",
     "webpack": "1.14.0",
-    "webpack-dev-server": "1.16.2"
+    "webpack-dev-server": "1.16.3"
   },
   "babel": {
     "presets": [
@@ -99,11 +99,11 @@
   },
   "keywords": [
     "angularjs",
-    "webpack"
+    "webpack 1"
   ],
   "main": "index.js",
   "author": "daggerok",
-  "description": "angularjs quickstart",
+  "description": "angularjs webpack 1 quickstart",
   "license": "ISC",
   "repository": {
     "type": "git",
