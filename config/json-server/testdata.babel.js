@@ -8,8 +8,6 @@ const categories = seq.map((_, id) => ({
   name: faker.name.title(),
 }));
 
-console.log('categories', categories);
-
 let bookmarks = [];
 
 categories.forEach(c => {
