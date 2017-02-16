@@ -20,6 +20,18 @@ const stylusLoader = env => ExtractTextWebpackPlugin.extract({
   use: `css-loader?importLoader=2${minimize(env)}!postcss-loader?sourceMap=inline!stylus-loader`,
 });
 
+const options = {
+  presets: [
+    // [ 'es2015', { modules: 'commonjs' } ], // can be false or amd, umd, systemjs, commonjs
+    [ 'es2015', { modules: false } ],
+    'stage-0',
+  ],
+  plugins: [
+    'add-module-exports',
+    'syntax-dynamic-import',
+  ],
+};
+
 export default env => ({
   rules: [
     env === 'development' ? {
@@ -35,24 +47,21 @@ export default env => ({
       loader: 'eslint-loader',
     },
     {
-      include,
+      exclude: [
+        exclude,
+        include,
+      ],
       test: /\.js$/i,
       loader: 'babel-loader',
-      options: {
-        presets: [
-          [ 'es2015', { modules: 'commonjs' } ], // can be false or amd, umd, systemjs, commonjs
-          'stage-0',
-        ],
-        plugins: [
-          'add-module-exports',
-          'syntax-dynamic-import',
-        ],
-      }
+      options,
     },
     {
       include,
       test: /src.*\.js$/i,
-      loader: 'ng-annotate-loader!babel-loader',
+      use: [
+        { loader: 'ng-annotate-loader', },
+        { loader: 'babel-loader', options, },
+      ],
     },
     {
       test: /\.html$/i,

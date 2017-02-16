@@ -1,42 +1,37 @@
-/*
- |--------------------------------------------------------------------------
- | Browser-sync config file
- |--------------------------------------------------------------------------
- |
- | For up-to-date information about the options:
- |   http://www.browsersync.io/docs/options/
- |
- | There are more options than you see here, these are just the ones that are
- | set internally. See the website for more info.
- */
-
 // all requests to /api/** => will redirect on http://localhost:8080/api/**
 const httpProxyMiddleware = require('http-proxy-middleware');
-const proxy = httpProxyMiddleware('/api', {
+const localhost8080proxyApi = httpProxyMiddleware('/api', {
   target: 'http://localhost:8080',
   changeOrigin: true, // for vhosted sites, changes host header to match to target's host
   logLevel: 'debug'
 });
 
 // fallback for react-routes
-const connectHistoryApiFallback = require('connect-history-api-fallback');
+const historyApiFallback = require('connect-history-api-fallback');
 
 module.exports = {
   server: {
     always: 'index.html',
+
     baseDir: './dist',
+
     middleware: [
-      proxy,
-      connectHistoryApiFallback({
+      // proxy
+      localhost8080proxyApi,
+      // historyApiFallback
+      historyApiFallback({
         index: '/angularjs/'
       })
     ],
   },
+
   files: [
     './index.html',
     './dist/**/*.*'
   ],
+
   startPath: '/angularjs/',
+
   serveStatic: [
     './dist'
   ],

@@ -17,7 +17,7 @@ const {
 } = optimize;
 
 import { BaseHrefWebpackPlugin } from 'base-href-webpack-plugin';
-import CopyWebpackPlugin from './plugins/copy-webpack-plugin.babel';
+// import CopyWebpackPlugin from './plugins/copy-webpack-plugin.babel';
 import uglifyJsPluginConfig from './plugins/uglify-js-plugin.config';
 import compressionWebpackPluginConfig from './plugins/compression-webpack-plugin.config.babel';
 import commonsChunkPluginConfig from './plugins/commons-chunk-plugin.config.babel';
@@ -30,7 +30,7 @@ import baseHrefWebpackPluginConfig from './plugins/base-href-webpack-plugin.conf
 import loaderOptionsPluginConfig from './plugins/loader-options-plugin.config.babel';
 
 export default env => [
-  CopyWebpackPlugin,
+  // CopyWebpackPlugin,
   new ProvidePlugin(providePluginConfig),
   new DefinePlugin(definePluginConfig(env)),
   new CommonsChunkPlugin(commonsChunkPluginConfig),
