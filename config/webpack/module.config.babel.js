@@ -22,10 +22,11 @@ const stylusLoader = env => ExtractTextWebpackPlugin.extract({
 
 const options = {
   presets: [
-    [ 'es2015', { modules: 'commonjs' } ], // can be false or amd, umd, systemjs, commonjs
+    // [ 'es2015', { modules: 'commonjs' } ], // can be false or amd, umd, systemjs, commonjs
+    [ 'es2015', { modules: false } ],
     'stage-0',
   ],
-    plugins: [
+  plugins: [
     'add-module-exports',
     'syntax-dynamic-import',
   ],
