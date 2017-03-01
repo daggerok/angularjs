@@ -13,3 +13,11 @@ npm run ghpages
 npm run ghserve
 fish bin/gh-pages.fish
 ```
+
+
+update npm versions
+
+```bash
+npm i -g npm-check-updates
+ncu -u
+```

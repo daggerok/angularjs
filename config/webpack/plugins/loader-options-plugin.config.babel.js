@@ -10,6 +10,6 @@ export default env => ({
     postcss,
     eslint: eslint(env),
   },
-  minimize: env === 'prod',
-  debug: env !== 'prod',
+  minimize: env === 'production',
+  debug: env !== 'production',
 });

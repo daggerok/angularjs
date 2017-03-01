@@ -2,6 +2,7 @@ import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin';
 import {
   pathTo,
   minimize,
+  publicPath,
 } from './utils.babel';
 
 const include = pathTo('./src');
@@ -12,11 +13,13 @@ const assets = /\.(raw|gif|png|jpg|jpeg|otf|eot|woff|woff2|ttf|svg|ico)$/i;
 
 const cssLoader = env => ExtractTextWebpackPlugin.extract({
   fallback: 'style-loader',
+  publicPath: publicPath(env),
   use: `css-loader?importLoader=1${minimize(env)}!postcss-loader?sourceMap=inline`,
 });
 
 const stylusLoader = env => ExtractTextWebpackPlugin.extract({
   fallback: 'style-loader',
+  publicPath: publicPath(env),
   use: `css-loader?importLoader=2${minimize(env)}!postcss-loader?sourceMap=inline!stylus-loader`,
 });
 
@@ -34,12 +37,12 @@ const options = {
 
 export default env => ({
   rules: [
-    env === 'development' ? {
+    {
       include,
       enforce: 'pre',
       test: /\.js$/i,
       loader: 'source-map-loader',
-    } : undefined,
+    },
     {
       exclude,
       enforce: 'pre',
@@ -101,5 +104,5 @@ export default env => ({
       loader: 'file-loader?name=[path]/[name].[ext]',
       test: assets,
     },
-  ].filter(rule => !!rule)
+  ],
 });

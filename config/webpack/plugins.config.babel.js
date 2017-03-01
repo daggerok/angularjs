@@ -1,5 +1,6 @@
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import ExtractTextWebpackPlugin from 'extract-text-webpack-plugin';
+import ProgressBarWebpackPlugin from 'progress-bar-webpack-plugin';
 import CompressionWebpackPlugin from 'compression-webpack-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import {
@@ -31,6 +32,7 @@ import loaderOptionsPluginConfig from './plugins/loader-options-plugin.config.ba
 
 export default env => [
   CopyWebpackPlugin,
+  new ProgressBarWebpackPlugin(),
   new ProvidePlugin(providePluginConfig),
   new DefinePlugin(definePluginConfig(env)),
   new CommonsChunkPlugin(commonsChunkPluginConfig),
