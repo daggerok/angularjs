@@ -1,4 +1,4 @@
-sudo: required
+group: edge
 dist: trusty
 language: node_js
 node_js: 6
@@ -16,4 +16,6 @@ script:
   - npm run webpack
   - npm run build
   - cat *.log | true
-cache.directories: node_modules/
+cache:
+  directories:
+    - node_modules/
