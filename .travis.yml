@@ -1,4 +1,4 @@
-sudo: required
+group: edge
 dist: trusty
 language: node_js
 node_js:
@@ -13,4 +13,6 @@ before_install:
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
 script: npm t
-cache.directories: node_modules/
+cache:
+  directories:
+    - node_modules/
