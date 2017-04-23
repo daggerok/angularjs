@@ -1,4 +1,4 @@
-sudo: required
+group: edge
 dist: trusty
 language: node_js
 node_js:
@@ -21,4 +21,6 @@ script:
   - npm i
   - npm run build
   - cat *.log | true
-cache.directories: node_modules/
+cache:
+  directories:
+    - node_modules/
