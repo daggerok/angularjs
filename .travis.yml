@@ -1,11 +1,14 @@
 group: edge
 dist: trusty
+
 language: node_js
 node_js:
   - 6
   - 7
-install:
-  - true
+  - 8
+  - "stable"
+
+install: true
 before_install:
   - export CHROME_BIN=/usr/bin/google-chrome
   - export DISPLAY=:99.0
@@ -14,11 +17,14 @@ before_install:
   - sudo apt-get install -y libappindicator1 fonts-liberation
   - wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
   - sudo dpkg -i google-chrome*.deb
+  - sudo npm i -g yarn
+
 script:
-  - npm i
-  - npm run build
-  - npm run gh-pages
+  - yarn -i
+  - yarn build
+  - yarn gh-pages
   - cat *.log | true
+
 cache:
   directories:
     - node_modules/
