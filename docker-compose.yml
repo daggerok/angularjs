@@ -1,14 +1,22 @@
-version: '2'
+version: "2.1"
+
 services:
-  angularjs-nginx:
-    container_name: angularjs-nginx
-    image: nginx:latest
+
+  app:
+    image: nginx:1.12.2-alpine
     volumes:
       - ./dist:/usr/share/nginx/html:ro
-    ports:
-      - "80:80"
-    networks:
-      - angularjs-network
+      - app-data:/usr/share/nginx
+    ports: ["80:80"]
+    networks: [angularjs-network]
+#    healthcheck:
+#      test: ["CMD-SHELL", "curl -I -s -L http://127.0.0.1/ || exit 1"]
+#      interval: 5s
+#      retries: 10
+
+volumes:
+  app-data:
+
 networks:
   angularjs-network:
     driver: bridge
